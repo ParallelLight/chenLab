@@ -1,4 +1,4 @@
-# chen-lab
+# chen-lab-web
 
 ## Project setup
 ```
