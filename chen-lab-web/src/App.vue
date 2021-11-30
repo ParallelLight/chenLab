@@ -9,7 +9,7 @@
     <el-button type="primary">el-button</el-button>
   </div>
   <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-  <Homepage msg="Welcome to ChenLab!"/>
+  <Homepage msg="Welcome to ChenLab! Hello world！"/>
 </template>
 
 <script>
