@@ -1,36 +1,50 @@
-<template>
-  <img src="./assets/logo-hias.png">
-  <div>
-    <p>
-      If Element Plus is successfully added to this project, you'll see an
-      <code v-text="'<el-button>'"></code>
-      below
-    </p>
-    <el-button type="primary">el-button</el-button>
-  </div>
-  <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-  <Homepage msg="Welcome to ChenLab! Hello world！"/>
-</template>
-
-<script>
-// import HelloWorld from './components/HelloWorld.vue'
-import Homepage from './components/Homepage.vue'
-
-export default {
-  name: 'App',
-  components: {
-    Homepage
-  }
-}
+<script setup lang="ts">
+import Header from "./layout/Header.vue";
+import { RouterView } from "vue-router";
+import Footer from "./layout/Footer.vue";
+import Backtop from "./components/Backtop.vue";
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<template>
+  <div class="container">
+    <!-- Header -->
+    <el-affix>
+      <Header></Header>
+    </el-affix>
+    <!-- Main & Footer -->
+    <div class="body-container">
+      <div class="main-container">
+        <RouterView />
+      </div>
+      <div class="footer-container">
+        <Footer></Footer>
+      </div>
+    </div>
+    <!-- Backtop -->
+    <Backtop></Backtop>
+  </div>
+</template>
+
+<style scoped>
+/* .dark {
+  background-color: black;
+  color: white;
+} */
+
+.body-container {
+  width: 100%;
+  min-height: 100%;
+  /* background-color: #f5f5f5; */
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-container {
+  flex: 1;
+}
+
+.footer-container {
+  flex: 0;
 }
 </style>
