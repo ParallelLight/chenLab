@@ -1,5 +1,5 @@
 <template>
-  <el-backtop :bottom="100"></el-backtop>
+  <el-backtop :bottom="60"></el-backtop>
 </template>
 
 <script lang="ts" setup>

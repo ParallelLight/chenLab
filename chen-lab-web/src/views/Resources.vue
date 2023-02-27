@@ -1,83 +1,99 @@
 <script lang="ts" setup>
-import { onMounted, ref } from 'vue'
+import { ref } from "vue";
+import { useDark } from "@vueuse/core"; // 引入暗黑模式
+const isDark = ref(useDark());
 
-interface ListItem {
-  imgUrl: string
-  name: string
-}
-
-const loading = ref(true)
-const lists = ref<ListItem[]>([])
-const currentDate = new Date().toDateString()
-
-const setLoading = () => {
-  loading.value = true
-  setTimeout(() => {
-    loading.value = false
-  }, 2000)
-}
-
-onMounted(() => {
-  loading.value = false
-  lists.value = [
-    {
-      imgUrl:
-        'https://fuss10.elemecdn.com/a/3f/3302e58f9a181d2509f3dc0fa68b0jpeg.jpeg',
-      name: 'Deer',
-    },
-    {
-      imgUrl:
-        'https://fuss10.elemecdn.com/1/34/19aa98b1fcb2781c4fba33d850549jpeg.jpeg',
-      name: 'Horse',
-    },
-    {
-      imgUrl:
-        'https://fuss10.elemecdn.com/0/6f/e35ff375812e6b0020b6b4e8f9583jpeg.jpeg',
-      name: 'Mountain Lion',
-    },
-  ]
-})
 </script>
 
 <template>
-  <el-row>
-    <el-col :span="1"></el-col>
-    <el-col :span="22">
-      <div>This is resources</div>
-      <el-space direction="vertical" alignment="flex-start">
-        <el-button @click="setLoading">Click me to reload</el-button>
-        <el-skeleton style="width: 240px" :loading="loading" animated :count="3">
-          <template #template>
-            <el-skeleton-item variant="image" style="width: 400px; height: 267px" />
-            <div style="padding: 14px">
-              <el-skeleton-item variant="h3" style="width: 50%" />
-              <div style="
-                  display: flex;
-                  align-items: center;
-                  justify-items: space-between;
-                  margin-top: 16px;
-                  height: 16px;
-                ">
-                <el-skeleton-item variant="text" style="margin-right: 16px" />
-                <el-skeleton-item variant="text" style="width: 30%" />
-              </div>
-            </div>
-          </template>
-          <template #default>
-            <el-card v-for="item in lists" :key="item.name" :body-style="{ padding: '0px', marginBottom: '1px' }">
-              <img :src="item.imgUrl" class="image multi-content" />
-              <div style="padding: 14px">
-                <span>{{ item.name }}</span>
-                <div class="bottom card-header">
-                  <div class="time">{{ currentDate }}</div>
-                  <el-button text class="button">Operation button</el-button>
-                </div>
-              </div>
-            </el-card>
-          </template>
-        </el-skeleton>
-      </el-space>
-    </el-col>
-    <el-col :span="1"></el-col>
-  </el-row>
+  <!-- 简述 -->
+  <div class="wrapper-background"></div>
+  <div class="wrapper-sketch">
+    <el-row>
+      <el-col :span="2"></el-col>
+      <el-col :span="20">
+        <el-row>
+          <el-col class="wrapper-sketch-text" :span="14">
+            <div class="wrapper-sketch-text-title">Resources</div>
+            <div class="wrapper-sketch-text-subtitle">The show of our work</div>
+            <h1 class="wrapper-sketch-text-content">There are some our resources</h1>
+          </el-col>
+        </el-row>
+      </el-col>
+      <el-col :span="2"></el-col>
+    </el-row>
+  </div>
+  <!-- 内容 -->
+  <div>
+    <el-row class="resources-wrap" :style="{ 'background-color': (!isDark ? 'white' : '#0D1117') }">
+      <el-col :span="2"></el-col>
+      <el-col :span="20">
+        <!-- 核心内容 -->
+        <el-row>
+          <!-- 8→24 -->
+          <el-col :span="8">
+            <h1>Database</h1>
+          </el-col>
+          <!-- 14→24，2→0 -->
+          <el-col :span="14" :offset="2">
+            <h2>This is an Advertisement space</h2>
+            <div class="web-text">We are mainly committed to the research of Biological Big Data and AI theory and
+              methods, including.</div>
+            <div class="web-text">We are mainly committed to the research of Biological Big Data and AI theory and
+              methods, including.</div>
+            <div class="web-text">We are mainly committed to the research of Biological Big Data and AI theory and
+              methods, including.</div>
+          </el-col>
+          <el-divider border-style="dashed" class="resources-wrap-divider" />
+        </el-row>
+        <!-- 核心内容 -->
+        <el-row>
+          <!-- 8→24 -->
+          <el-col :span="8">
+            <h1>Database</h1>
+          </el-col>
+          <!-- 14→24，2→0 -->
+          <el-col :span="14" :offset="2">
+            <h2>This is an Advertisement space</h2>
+            <div class="web-text">We are mainly committed to the research of Biological Big Data and AI theory and
+              methods, including.</div>
+            <div class="web-text">We are mainly committed to the research of Biological Big Data and AI theory and
+              methods, including.</div>
+            <div class="web-text">We are mainly committed to the research of Biological Big Data and AI theory and
+              methods, including.</div>
+          </el-col>
+          <el-divider border-style="dashed" class="resources-wrap-divider" />
+        </el-row>
+        <!-- 核心内容 -->
+        <el-row>
+          <!-- 8→24 -->
+          <el-col :span="8">
+            <h1>Database</h1>
+          </el-col>
+          <!-- 14→24，2→0 -->
+          <el-col :span="14" :offset="2">
+            <h2>This is an Advertisement space</h2>
+            <div class="web-text">We are mainly committed to the research of Biological Big Data and AI theory and
+              methods, including.</div>
+            <div class="web-text">We are mainly committed to the research of Biological Big Data and AI theory and
+              methods, including.</div>
+            <div class="web-text">We are mainly committed to the research of Biological Big Data and AI theory and
+              methods, including.</div>
+          </el-col>
+          <el-divider border-style="dashed" class="resources-wrap-divider" />
+        </el-row>
+      </el-col>
+      <el-col :span="2"></el-col>
+    </el-row>
+  </div>
 </template>
+
+<style scoped>
+.resources-wrap {
+  padding: 50px 0 100px 0;
+}
+
+.resources-wrap-divider {
+  margin: 50px 0;
+}
+</style>

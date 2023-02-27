@@ -1,54 +1,189 @@
 <script setup lang="ts">
-const urls = [
-  "https://fuss10.elemecdn.com/a/3f/3302e58f9a181d2509f3dc0fa68b0jpeg.jpeg",
-  "https://fuss10.elemecdn.com/1/34/19aa98b1fcb2781c4fba33d850549jpeg.jpeg",
-  "https://fuss10.elemecdn.com/0/6f/e35ff375812e6b0020b6b4e8f9583jpeg.jpeg",
-  "https://fuss10.elemecdn.com/9/bb/e27858e973f5d7d3904835f46abbdjpeg.jpeg",
-  "https://fuss10.elemecdn.com/d/e6/c4d93a3805b3ce3f323f7974e6f78jpeg.jpeg",
-  "https://fuss10.elemecdn.com/3/28/bbf893f792f03a54408b3b7a7ebf0jpeg.jpeg",
-  "https://fuss10.elemecdn.com/2/11/6535bcfb26e4c79b48ddde44f4b6fjpeg.jpeg",
-];
+import { ref } from "vue";
+import { useDark } from "@vueuse/core"; // 引入暗黑模式
+const isDark = ref(useDark());
 </script>
 
 <template>
-  <el-row>
-    <el-col :span="1"></el-col>
-    <el-col :span="22">
-      <span
-        >Welcome to Chen Luonan Chief Proffessor Studio.Welcome to Chen Luonan
-        Chief Proffessor Studio.Welcome to Chen Luonan Chief Proffessor
-        Studio.Welcome to Chen Luonan Chief Proffessor Studio.Welcome to Chen
-        Luonan Chief Proffessor Studio.Welcome to Chen Luonan Chief Proffessor
-        Studio.Welcome to Chen Luonan Chief Proffessor Studio.Welcome to Chen
-        Luonan Chief Proffessor Studio.Welcome to Chen Luonan Chief Proffessor
-        Studio.Welcome to Chen Luonan Chief Proffessor Studio.Welcome to Chen
-        Luonan Chief Proffessor Studio.Welcome to Chen Luonan Chief Proffessor
-        Studio.Welcome to Chen Luonan Chief Proffessor Studio.</span
-      >
-      <el-card shadow="always">
-        Welcome to Chen Luonan Chief Proffessor Studio.
-      </el-card>
-      <div class="demo-image__lazy">
-        <el-image v-for="url in urls" :key="url" :src="url" lazy />
-      </div>
+  <!-- 简述 -->
+  <div class="wrapper-background"></div>
+  <div class="wrapper-sketch">
+    <el-row>
+      <el-col :span="2"></el-col>
+      <el-col :span="20">
+        <el-row>
+          <el-col class="wrapper-sketch-text" :span="14">
+            <div class="wrapper-sketch-text-title">Research</div>
+            <div class="wrapper-sketch-text-subtitle">Computational systems biology & Bioinformatics</div>
+            <h1 class="wrapper-sketch-text-content">Go for Science and Seek for Progress</h1>
+          </el-col>
+        </el-row>
+      </el-col>
+      <el-col :span="2"></el-col>
+    </el-row>
+  </div>
+  <!-- 介绍 -->
+  <el-row class="research-intro" :style="{ 'background-color': (!isDark ? 'white' : '#161B22') }">
+    <el-col :span="2"></el-col>
+    <el-col :span="20">
+      <el-row>
+        <!-- 左侧文本 -->
+        <el-col :span="10">
+          <span class="web-text">We are mainly committed to the research of Biological Big Data and AI
+            theory and methods, including bioinformatics, computational systems biology, network biology, dynamic data
+            science methods, deep learning and applications, etc.
+            We are mainly committed to the research of Biological Big Data and AI theory and methods, including
+            bioinformatics, computational systems biology, network biology, dynamic data science methods, deep learning
+            and applications, etc.
+          </span>
+        </el-col>
+        <!-- 右侧图片 -->
+        <el-col class="research-intro-image" :span="12" :offset="2">
+          <el-image style="width: 400px; height: 200px;"
+            src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"></el-image>
+        </el-col>
+      </el-row>
     </el-col>
-    <el-col :span="1"></el-col>
+    <el-col :span="2"></el-col>
   </el-row>
+  <!-- 内容 -->
+  <div>
+    <!-- Part1 -->
+    <el-row class="research-part" :style="{ 'background-color': (!isDark ? 'white' : '#0D1117') }">
+      <el-col :span="2"></el-col>
+      <el-col :span="20">
+        <h1>Part 1</h1>
+        <el-row>
+          <el-col :span="10">
+            <el-image style="width: 100%; height: 400px;" fit="fill"
+              src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"></el-image>
+          </el-col>
+          <el-col :span="10" :offset="4" class="research-part-text">
+            <h2>This is an Advertisement space</h2>
+            <span class="web-text">We are mainly committed to the research of Biological Big Data and AI theory and
+              methods, including
+              bioinformatics, computational systems biology, network biology, dynamic data science methods, deep
+              learning and
+              applications, etc.</span>
+          </el-col>
+        </el-row>
+      </el-col>
+      <el-col :span="2"></el-col>
+    </el-row>
+    <!-- Papers -->
+    <el-row class="research-paper" :style="{ 'background-color': (!isDark ? 'white' : '#363739') }">
+      <el-col :span="2"></el-col>
+      <el-col :span="20">
+        <h2>Related Papers of Part 1</h2>
+        <div class="web-text">
+          <div>1. We are mainly committed to the research of Biological Big Data and AI theory and methods</div>
+          <div>2. including bioinformatics, computational systems biology</div>
+          <div>3. network biology, dynamic data science methods, deep learning and applications, etc.</div>
+        </div>
+      </el-col>
+      <el-col :span="2"></el-col>
+    </el-row>
+  </div>
+  <div>
+    <!-- Part1 -->
+    <el-row class="research-part" :style="{ 'background-color': (!isDark ? 'white' : '#0D1117') }">
+      <el-col :span="2"></el-col>
+      <el-col :span="20">
+        <h1>Part 1</h1>
+        <el-row>
+          <el-col :span="10">
+            <el-image style="width: 100%; height: 400px;" fit="fill"
+              src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"></el-image>
+          </el-col>
+          <el-col :span="10" :offset="4" class="research-part-text">
+            <h2>This is an Advertisement space</h2>
+            <span class="web-text">We are mainly committed to the research of Biological Big Data and AI theory and
+              methods, including
+              bioinformatics, computational systems biology, network biology, dynamic data science methods, deep
+              learning and
+              applications, etc.</span>
+          </el-col>
+        </el-row>
+      </el-col>
+      <el-col :span="2"></el-col>
+    </el-row>
+    <!-- Papers -->
+    <el-row class="research-paper" :style="{ 'background-color': (!isDark ? 'white' : '#363739') }">
+      <el-col :span="2"></el-col>
+      <el-col :span="20">
+        <h2>Related Papers of Part 1</h2>
+        <div class="web-text">
+          <div>1. We are mainly committed to the research of Biological Big Data and AI theory and methods</div>
+          <div>2. including bioinformatics, computational systems biology</div>
+          <div>3. network biology, dynamic data science methods, deep learning and applications, etc.</div>
+        </div>
+      </el-col>
+      <el-col :span="2"></el-col>
+    </el-row>
+  </div>
+  <div>
+    <!-- Part1 -->
+    <el-row class="research-part" :style="{ 'background-color': (!isDark ? 'white' : '#0D1117') }">
+      <el-col :span="2"></el-col>
+      <el-col :span="20">
+        <h1>Part 1</h1>
+        <el-row>
+          <el-col :span="10">
+            <el-image style="width: 100%; height: 400px;" fit="fill"
+              src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"></el-image>
+          </el-col>
+          <el-col :span="10" :offset="4" class="research-part-text">
+            <h2>This is an Advertisement space</h2>
+            <span class="web-text">We are mainly committed to the research of Biological Big Data and AI theory and
+              methods, including
+              bioinformatics, computational systems biology, network biology, dynamic data science methods, deep
+              learning and
+              applications, etc.</span>
+          </el-col>
+        </el-row>
+      </el-col>
+      <el-col :span="2"></el-col>
+    </el-row>
+    <!-- Papers -->
+    <el-row class="research-paper" :style="{ 'background-color': (!isDark ? 'white' : '#363739') }">
+      <el-col :span="2"></el-col>
+      <el-col :span="20">
+        <h2>Related Papers of Part 1</h2>
+        <div class="web-text">
+          <div>1. We are mainly committed to the research of Biological Big Data and AI theory and methods</div>
+          <div>2. including bioinformatics, computational systems biology</div>
+          <div>3. network biology, dynamic data science methods, deep learning and applications, etc.</div>
+        </div>
+      </el-col>
+      <el-col :span="2"></el-col>
+    </el-row>
+  </div>
 </template>
 
 <style scoped>
-.demo-image__lazy {
-  height: 400px;
-  overflow-y: auto;
+.research-intro {
+  padding: 100px 0;
+  /* border: 1px solid red; */
 }
 
-.demo-image__lazy .el-image {
-  display: block;
-  min-height: 200px;
-  margin-bottom: 10px;
+.research-intro-image {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  /* border: 1px solid green; */
 }
 
-.demo-image__lazy .el-image:last-child {
-  margin-bottom: 0;
+.research-part {
+  padding: 50px 0 70px 0;
+  /* border: 1px solid blue; */
+}
+
+.research-part-text {
+  border: 1px solid red;
+  text-align: justify;
+}
+
+.research-paper {
+  padding: 40px 0 70px 0;
 }
 </style>

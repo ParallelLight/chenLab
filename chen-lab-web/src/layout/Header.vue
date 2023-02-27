@@ -18,8 +18,8 @@ const isDark = ref(useDark());
 
 <template>
   <el-row :style="{ 'background-color': (!isDark ? 'white' : 'black') }">
-    <el-col :span="1"></el-col>
-    <el-col :span="22">
+    <el-col :span="2"></el-col>
+    <el-col :span="20">
       <el-menu :default-active="route.path" router class="header-menu" mode="horizontal" :ellipsis="false"
         :background-color="!isDark ? 'white' : 'black'">
         <!-- <div class="header-menu-logo header-menu-item-flex"><a href="/">Computational Bioinformatics Group</a></div> -->
@@ -32,21 +32,22 @@ const isDark = ref(useDark());
             </el-image>
           </a>
         </div>
-        <div class="flex-grow"></div>
+        <div class="header-menu-flex-grow "></div>
         <el-menu-item index="/">Home</el-menu-item>
         <el-menu-item index="/research">Research</el-menu-item>
         <el-menu-item index="/team">Team</el-menu-item>
         <el-menu-item index="/publications">Publications</el-menu-item>
         <el-menu-item index="/resources">Resources</el-menu-item>
-        <el-menu-item index="/news">News</el-menu-item>
+        <el-menu-item index="/moments">Moments</el-menu-item>
         <el-menu-item index="/contact">Contact</el-menu-item>
+        <el-menu-item index="/test">test</el-menu-item>
         <div class="header-menu-item-flex">
           <el-switch v-model="isDark" inline-prompt :active-icon="Moon" :inactive-icon="Sunny" active-color="#303030"
             inactive-color="#909399" border-color="#D4D7DE" />
         </div>
       </el-menu>
     </el-col>
-    <el-col :span="1"></el-col>
+    <el-col :span="2"></el-col>
   </el-row>
 </template>
 
@@ -73,7 +74,7 @@ const isDark = ref(useDark());
   height: 40px;
 }
 
-.flex-grow {
+.header-menu-flex-grow {
   flex-grow: 1;
 }
 

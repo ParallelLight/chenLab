@@ -2,7 +2,9 @@
 import { ref } from "vue";
 import { useDark } from "@vueuse/core"; // 引入暗黑模式
 import { Avatar, Collection, Link } from "@element-plus/icons-vue"
+
 const isDark = ref(useDark());
+
 const papers = [
   {
     date: '27 January 2023',
@@ -50,6 +52,23 @@ const papers = [
     citation: "Guo, J., Zhang, Z., Li, Q., Chang, X., & Liu, X. (2023). TeCD: The eccDNA Collection Database for extrachromosomal circular DNA. BMC genomics, 24(1), 47. https://doi.org/10.1186/s12864-023-09135-5"
   }
 ]
+
+
+
+const activities = [
+  {
+    content: 'Event start',
+    timestamp: '2018-04-15',
+  },
+  {
+    content: 'Approved',
+    timestamp: '2018-04-13',
+  },
+  {
+    content: 'Success',
+    timestamp: '2018-04-11',
+  },
+]
 </script>
 
 <template>
@@ -61,45 +80,32 @@ const papers = [
       <el-col :span="20">
         <el-row>
           <el-col class="wrapper-sketch-text" :span="14">
-            <div class="wrapper-sketch-text-title">Publications</div>
+            <div class="wrapper-sketch-text-title">Moments</div>
             <div class="wrapper-sketch-text-subtitle">The show of our work</div>
-            <h1 class="wrapper-sketch-text-content">Access the lab's published research and news media coverage</h1>
+            <h1 class="wrapper-sketch-text-content">Happy Moments</h1>
           </el-col>
         </el-row>
       </el-col>
       <el-col :span="2"></el-col>
     </el-row>
   </div>
-  <!-- 简介 -->
-  <el-row class="publications-intro" :style="{ 'background-color': (!isDark ? 'white' : '#161B22') }">
-    <el-col :span="2"></el-col>
-    <el-col :span="20">
-      <el-row>
-        <!-- 左侧文本 -->
-        <el-col :span="10">
-          <span class="web-text">We are mainly committed to the research of Biological Big Data and AI
-            theory and methods, including bioinformatics, computational systems biology, network biology, dynamic data
-            science methods, deep learning and applications, etc.
-            We are mainly committed to the research of Biological Big Data and AI theory and methods, including
-            bioinformatics, computational systems biology, network biology, dynamic data science methods, deep learning
-            and applications, etc.
-          </span>
-        </el-col>
-        <!-- 右侧图片 -->
-        <el-col :span="12" :offset="2">
-          <el-image style="width: 800px; height: 400px;"
-            src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"></el-image>
-        </el-col>
-      </el-row>
-    </el-col>
-    <el-col :span="2"></el-col>
-  </el-row>
-  <!-- 论文 -->
-  <el-row :style="{ 'background-color': (!isDark ? 'white' : '#0D1117') }">
+  <!-- 时间轴 -->
+  <el-row class="moments-content" :style="{ 'background-color': (!isDark ? 'white' : ' #1d3043') }">
     <el-col :span="2"></el-col>
     <el-col :span="20">
       <el-timeline class="publications-papers">
-        <el-timeline-item v-for="(paper, index) in papers" :key="index" placement="top" type="success" size="large"
+        <el-timeline-item v-for="(activity, index) in activities" :key="index"
+          :class="index % 2 === 0 ? 'timeline-left' : 'timeline-right'" :timestamp="activity.timestamp" placement="top">
+          <el-card>
+            <h4>{{ activity.timestamp }}</h4>
+            <p>{{ activity.content }}</p>
+          </el-card>
+        </el-timeline-item>
+      </el-timeline>
+
+      <el-timeline class="publications-papers">
+        <el-timeline-item v-for="(paper, index) in papers" :key="index"
+          :class="index % 2 === 0 ? 'timeline-left' : 'timeline-right'" placement="top" type="success" size="large"
           hollow="true">
           <h3>{{ paper.date }}</h3>
           <el-card class="publications-papers-card">
@@ -136,15 +142,33 @@ const papers = [
           </el-card>
         </el-timeline-item>
       </el-timeline>
+
     </el-col>
     <el-col :span="2"></el-col>
   </el-row>
 </template>
-<style>
-.publications-intro {
-  padding: 100px 0;
-  /* border: 1px solid red; */
+
+<style scoped>
+.timeline-right {
+  left: 50%;
+  width: 50%;
+  /* right: 0; */
+  /* border: 1px solid blue; */
 }
+
+.timeline-left {
+  left: 50%;
+  width: 50%;
+  /* border: 1px solid green; */
+}
+
+.timeline-left :deep(.el-timeline-item__wrapper) {
+  right: 100%;
+  padding: 0 19px 0 0;
+  text-align: right;
+}
+
+
 
 .publications-papers {
   padding: 100px 0;

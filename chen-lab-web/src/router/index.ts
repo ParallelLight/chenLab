@@ -33,14 +33,19 @@ const router = createRouter({
       component: () => import("../views/Resources.vue"),
     },
     {
-      path: "/news",
-      name: "news",
-      component: () => import("../views/News.vue"),
+      path: "/moments",
+      name: "moments",
+      component: () => import("../views/Moments.vue"),
     },
     {
       path: "/contact",
       name: "contact",
       component: () => import("../views/Contact.vue"),
+    },
+    {
+      path: "/test",
+      name: "test",
+      component: () => import("../views/test.vue"),
     },
   ],
 });
