@@ -16,6 +16,15 @@ const activities = [
 </script>
 
 <template>
+    <div class="box">
+        <a href="#">
+            <div class="img"><img src="图片路径"></div>
+            <div class="text">
+                <h3>提示文字</h3>
+            </div>
+        </a>
+    </div>
+
     <el-timeline class="timeline">
         <!-- 循环判断索引的奇偶区分开左右 -->
         <el-timeline-item v-for="(activity, index) in activities" :key="index"
@@ -33,20 +42,60 @@ const activities = [
 .timeline {
     padding: 50px;
 }
+
 /* 右侧`el-timeline-item`的样式，将原始时间轴组件整体移动到右半侧 */
 .timeline-right {
     left: 50%;
     width: 50%;
 }
+
 /* 左侧`el-timeline-item`的样式，同上，仅是为了方便下面的CSS样式修改 */
 .timeline-left {
     left: 50%;
     width: 50%;
 }
+
 /* 针对左侧内容修改样式，注意这里使用的scss */
 .timeline-left :deep(.el-timeline-item__wrapper) {
     right: 100%;
     padding: 0 19px 0 0;
     text-align: right;
+}
+
+
+
+
+
+.box {
+    position: relative;
+    width: 350px;
+    height: 350px;
+}
+
+.box .img img {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    max-width: 100%;
+}
+
+.box .text {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    -webkit-transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    transition: all 0.35s ease-in-out;
+}
+
+.box a:hover .text {
+    opacity: 1;
 }
 </style>

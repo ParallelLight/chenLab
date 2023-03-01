@@ -2,6 +2,51 @@
 import { ref } from "vue";
 import { useDark } from "@vueuse/core"; // 引入暗黑模式
 const isDark = ref(useDark());
+const resources = [
+  {
+    title: "Database",
+    subtitle: "Databases developed by the group",
+    tools: [
+      {
+        name: "TeCD",
+        desc: "We are mainly committed to the research of Biological Big Data and AI theory",
+        link: "http://www.eccdna.org:2022/"
+      },
+      {
+        name: "CASA",
+        desc: "Hello CASA",
+        link: "https://casadbtools.com/"
+      }
+    ]
+  },
+  {
+    title: "Source Code",
+    subtitle: "Source code provided by the group",
+    tools: [
+      {
+        name: "TeCD",
+        desc: "We are mainly committed to the research of Biological Big Data and AI theory",
+        link: "http://www.eccdna.org:2022/"
+      },
+      {
+        name: "CASA",
+        desc: "Hello CASA",
+        link: "https://casadbtools.com/"
+      }
+    ]
+  },
+  {
+    title: "Books",
+    subtitle: "Books written by the group",
+    tools: [
+      {
+        name: "TeCD",
+        desc: "We are mainly committed to the research of Biological Big Data and AI theory",
+        link: "http://www.eccdna.org:2022/"
+      }
+    ]
+  },
+]
 
 </script>
 
@@ -15,7 +60,7 @@ const isDark = ref(useDark());
         <el-row>
           <el-col class="wrapper-sketch-text" :span="14">
             <div class="wrapper-sketch-text-title">Resources</div>
-            <div class="wrapper-sketch-text-subtitle">The show of our work</div>
+            <div class="wrapper-sketch-text-subtitle">The resources of our work</div>
             <h1 class="wrapper-sketch-text-content">There are some our resources</h1>
           </el-col>
         </el-row>
@@ -29,56 +74,22 @@ const isDark = ref(useDark());
       <el-col :span="2"></el-col>
       <el-col :span="20">
         <!-- 核心内容 -->
-        <el-row>
+        <el-row v-for="(resource, index) in resources" :key="index">
           <!-- 8→24 -->
           <el-col :span="8">
-            <h1>Database</h1>
+            <h1>{{ resource.title }}</h1>
           </el-col>
           <!-- 14→24，2→0 -->
           <el-col :span="14" :offset="2">
-            <h2>This is an Advertisement space</h2>
-            <div class="web-text">We are mainly committed to the research of Biological Big Data and AI theory and
-              methods, including.</div>
-            <div class="web-text">We are mainly committed to the research of Biological Big Data and AI theory and
-              methods, including.</div>
-            <div class="web-text">We are mainly committed to the research of Biological Big Data and AI theory and
-              methods, including.</div>
-          </el-col>
-          <el-divider border-style="dashed" class="resources-wrap-divider" />
-        </el-row>
-        <!-- 核心内容 -->
-        <el-row>
-          <!-- 8→24 -->
-          <el-col :span="8">
-            <h1>Database</h1>
-          </el-col>
-          <!-- 14→24，2→0 -->
-          <el-col :span="14" :offset="2">
-            <h2>This is an Advertisement space</h2>
-            <div class="web-text">We are mainly committed to the research of Biological Big Data and AI theory and
-              methods, including.</div>
-            <div class="web-text">We are mainly committed to the research of Biological Big Data and AI theory and
-              methods, including.</div>
-            <div class="web-text">We are mainly committed to the research of Biological Big Data and AI theory and
-              methods, including.</div>
-          </el-col>
-          <el-divider border-style="dashed" class="resources-wrap-divider" />
-        </el-row>
-        <!-- 核心内容 -->
-        <el-row>
-          <!-- 8→24 -->
-          <el-col :span="8">
-            <h1>Database</h1>
-          </el-col>
-          <!-- 14→24，2→0 -->
-          <el-col :span="14" :offset="2">
-            <h2>This is an Advertisement space</h2>
-            <div class="web-text">We are mainly committed to the research of Biological Big Data and AI theory and
-              methods, including.</div>
-            <div class="web-text">We are mainly committed to the research of Biological Big Data and AI theory and
-              methods, including.</div>
-            <div class="web-text">We are mainly committed to the research of Biological Big Data and AI theory and
-              methods, including.</div>
+            <h2>{{ resource.subtitle }}</h2>
+            <ul>
+              <li class="web-text" v-for="(tool, index) in resource.tools" :key="index">
+                <span>{{ tool.name }}: {{ tool.desc }}</span>
+                <el-link :underline="false" target="_blank" type="primary" :href="tool.link">
+                  <font-awesome-icon icon="arrow-up-right-from-square" />
+                </el-link>
+              </li>
+            </ul>
           </el-col>
           <el-divider border-style="dashed" class="resources-wrap-divider" />
         </el-row>

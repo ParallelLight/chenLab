@@ -5,6 +5,7 @@ const isDark = ref(useDark());
 </script>
 
 <template>
+  <!-- 首页背景图 -->
   <div class="home-background">
   </div>
   <!-- 首页导语 -->

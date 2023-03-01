@@ -2,11 +2,62 @@
 import { ref } from "vue";
 import { useDark } from "@vueuse/core"; // 引入暗黑模式
 const isDark = ref(useDark());
+const researches = [
+  {
+    title: "Part 1",
+    image: "https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png",
+    subtitle: "This is the subtitle",
+    content: "We are mainly committed to the research of Biological Big Data and AI theory and methods, including bioinformatics, computational systems biology, network biology, dynamic data science methods, deep learning and applications, etc.",
+    papers: [
+      {
+        title: "Shijie Tang, Yun Xue, Zhen Qin, Zhaoyuan Fang, Yihua Sun, Chongzhe Yuan, Yunjian Pan, Yue Zhao, Xinyuan Tong, Jian Zhang, Hsinyi Huang, Yuting Chen, Liang Hu, Dasong Huang, Ruiqi Wang, Weiguo Zou, Yuan Li, Roman K Thomas, Andrea Ventura, Kwok-Kin Wong, Haiquan Chen, Luonan Chen, Hongbin Ji. Counteracting lineage-specific transcription factor network finely tunes lung adeno-to-squamous transdifferentiation through remodeling tumor immune microenvironment. National Science Review, https://doi.org/10.1093/nsr/nwad028, 2023.",
+        doi: "https://doi.org/10.1093/nsr/nwad028"
+      },
+      {
+        title: "Peng Tao, Jifan Shi, Luonan Chen. Detecting dynamical causality by intersection cardinal concavity. Fundamental Research, https://doi.org/10.1016/j.fmre.2023.01.007, 2023.",
+        doi: "https://doi.org/10.1016/j.fmre.2023.01.007"
+      }
+    ]
+  },
+  {
+    title: "Part 2",
+    image: "https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png",
+    subtitle: "This is the subtitle",
+    content: "We are mainly committed to the research of Biological Big Data and AI theory and methods, including bioinformatics, computational systems biology, network biology, dynamic data science methods, deep learning and applications, etc.",
+    papers: [
+      {
+        title: "Shijie Tang, Yun Xue, Zhen Qin, Zhaoyuan Fang, Yihua Sun, Chongzhe Yuan, Yunjian Pan, Yue Zhao, Xinyuan Tong, Jian Zhang, Hsinyi Huang, Yuting Chen, Liang Hu, Dasong Huang, Ruiqi Wang, Weiguo Zou, Yuan Li, Roman K Thomas, Andrea Ventura, Kwok-Kin Wong, Haiquan Chen, Luonan Chen, Hongbin Ji. Counteracting lineage-specific transcription factor network finely tunes lung adeno-to-squamous transdifferentiation through remodeling tumor immune microenvironment. National Science Review, https://doi.org/10.1093/nsr/nwad028, 2023.",
+        doi: "https://doi.org/10.1093/nsr/nwad028"
+      },
+      {
+        title: "Peng Tao, Jifan Shi, Luonan Chen. Detecting dynamical causality by intersection cardinal concavity. Fundamental Research, https://doi.org/10.1016/j.fmre.2023.01.007, 2023.",
+        doi: "https://doi.org/10.1016/j.fmre.2023.01.007"
+      },
+      {
+        title: "Peng Tao, Jifan Shi, Luonan Chen. Detecting dynamical causality by intersection cardinal concavity. Fundamental Research, https://doi.org/10.1016/j.fmre.2023.01.007, 2023.",
+        doi: "https://doi.org/10.1016/j.fmre.2023.01.007"
+      }
+    ]
+  },
+  {
+    title: "Part 3",
+    image: "https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png",
+    subtitle: "This is the subtitle",
+    content: "We are mainly committed to the research of Biological Big Data and AI theory and methods, including bioinformatics, computational systems biology, network biology, dynamic data science methods, deep learning and applications, etc.",
+    papers: [
+      {
+        title: "Shijie Tang, Yun Xue, Zhen Qin, Zhaoyuan Fang, Yihua Sun, Chongzhe Yuan, Yunjian Pan, Yue Zhao, Xinyuan Tong, Jian Zhang, Hsinyi Huang, Yuting Chen, Liang Hu, Dasong Huang, Ruiqi Wang, Weiguo Zou, Yuan Li, Roman K Thomas, Andrea Ventura, Kwok-Kin Wong, Haiquan Chen, Luonan Chen, Hongbin Ji. Counteracting lineage-specific transcription factor network finely tunes lung adeno-to-squamous transdifferentiation through remodeling tumor immune microenvironment. National Science Review, https://doi.org/10.1093/nsr/nwad028, 2023.",
+        doi: "https://doi.org/10.1093/nsr/nwad028"
+      }
+    ]
+  }
+]
 </script>
 
 <template>
-  <!-- 简述 -->
+  <!-- 背景 -->
   <div class="wrapper-background"></div>
+  <!-- 简述 -->
   <div class="wrapper-sketch">
     <el-row>
       <el-col :span="2"></el-col>
@@ -39,7 +90,7 @@ const isDark = ref(useDark());
         </el-col>
         <!-- 右侧图片 -->
         <el-col class="research-intro-image" :span="12" :offset="2">
-          <el-image style="width: 400px; height: 200px;"
+          <el-image
             src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"></el-image>
         </el-col>
       </el-row>
@@ -47,24 +98,19 @@ const isDark = ref(useDark());
     <el-col :span="2"></el-col>
   </el-row>
   <!-- 内容 -->
-  <div>
-    <!-- Part1 -->
+  <div v-for="(research, index) in researches" :key="index">
+    <!-- Part -->
     <el-row class="research-part" :style="{ 'background-color': (!isDark ? 'white' : '#0D1117') }">
       <el-col :span="2"></el-col>
       <el-col :span="20">
-        <h1>Part 1</h1>
+        <h1>{{ research.title }}</h1>
         <el-row>
           <el-col :span="10">
-            <el-image style="width: 100%; height: 400px;" fit="fill"
-              src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"></el-image>
+            <el-image style="width: 60%;" fit="fill" :src="research.image"></el-image>
           </el-col>
           <el-col :span="10" :offset="4" class="research-part-text">
-            <h2>This is an Advertisement space</h2>
-            <span class="web-text">We are mainly committed to the research of Biological Big Data and AI theory and
-              methods, including
-              bioinformatics, computational systems biology, network biology, dynamic data science methods, deep
-              learning and
-              applications, etc.</span>
+            <h2>{{ research.subtitle }}</h2>
+            <span class="web-text">{{ research.content }}</span>
           </el-col>
         </el-row>
       </el-col>
@@ -74,86 +120,15 @@ const isDark = ref(useDark());
     <el-row class="research-paper" :style="{ 'background-color': (!isDark ? 'white' : '#363739') }">
       <el-col :span="2"></el-col>
       <el-col :span="20">
-        <h2>Related Papers of Part 1</h2>
-        <div class="web-text">
-          <div>1. We are mainly committed to the research of Biological Big Data and AI theory and methods</div>
-          <div>2. including bioinformatics, computational systems biology</div>
-          <div>3. network biology, dynamic data science methods, deep learning and applications, etc.</div>
-        </div>
-      </el-col>
-      <el-col :span="2"></el-col>
-    </el-row>
-  </div>
-  <div>
-    <!-- Part1 -->
-    <el-row class="research-part" :style="{ 'background-color': (!isDark ? 'white' : '#0D1117') }">
-      <el-col :span="2"></el-col>
-      <el-col :span="20">
-        <h1>Part 1</h1>
-        <el-row>
-          <el-col :span="10">
-            <el-image style="width: 100%; height: 400px;" fit="fill"
-              src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"></el-image>
-          </el-col>
-          <el-col :span="10" :offset="4" class="research-part-text">
-            <h2>This is an Advertisement space</h2>
-            <span class="web-text">We are mainly committed to the research of Biological Big Data and AI theory and
-              methods, including
-              bioinformatics, computational systems biology, network biology, dynamic data science methods, deep
-              learning and
-              applications, etc.</span>
-          </el-col>
-        </el-row>
-      </el-col>
-      <el-col :span="2"></el-col>
-    </el-row>
-    <!-- Papers -->
-    <el-row class="research-paper" :style="{ 'background-color': (!isDark ? 'white' : '#363739') }">
-      <el-col :span="2"></el-col>
-      <el-col :span="20">
-        <h2>Related Papers of Part 1</h2>
-        <div class="web-text">
-          <div>1. We are mainly committed to the research of Biological Big Data and AI theory and methods</div>
-          <div>2. including bioinformatics, computational systems biology</div>
-          <div>3. network biology, dynamic data science methods, deep learning and applications, etc.</div>
-        </div>
-      </el-col>
-      <el-col :span="2"></el-col>
-    </el-row>
-  </div>
-  <div>
-    <!-- Part1 -->
-    <el-row class="research-part" :style="{ 'background-color': (!isDark ? 'white' : '#0D1117') }">
-      <el-col :span="2"></el-col>
-      <el-col :span="20">
-        <h1>Part 1</h1>
-        <el-row>
-          <el-col :span="10">
-            <el-image style="width: 100%; height: 400px;" fit="fill"
-              src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"></el-image>
-          </el-col>
-          <el-col :span="10" :offset="4" class="research-part-text">
-            <h2>This is an Advertisement space</h2>
-            <span class="web-text">We are mainly committed to the research of Biological Big Data and AI theory and
-              methods, including
-              bioinformatics, computational systems biology, network biology, dynamic data science methods, deep
-              learning and
-              applications, etc.</span>
-          </el-col>
-        </el-row>
-      </el-col>
-      <el-col :span="2"></el-col>
-    </el-row>
-    <!-- Papers -->
-    <el-row class="research-paper" :style="{ 'background-color': (!isDark ? 'white' : '#363739') }">
-      <el-col :span="2"></el-col>
-      <el-col :span="20">
-        <h2>Related Papers of Part 1</h2>
-        <div class="web-text">
-          <div>1. We are mainly committed to the research of Biological Big Data and AI theory and methods</div>
-          <div>2. including bioinformatics, computational systems biology</div>
-          <div>3. network biology, dynamic data science methods, deep learning and applications, etc.</div>
-        </div>
+        <h2>Related Papers of {{ research.title }}</h2>
+        <ol>
+          <li class="web-text" v-for="(paper, index) in research.papers" :key="index">
+            <span>{{ paper.title }}</span>
+            <el-link :underline="false" target="_blank" type="primary" :href="paper.doi">
+              <font-awesome-icon icon="arrow-up-right-from-square" />
+            </el-link>
+          </li>
+        </ol>
       </el-col>
       <el-col :span="2"></el-col>
     </el-row>
@@ -179,11 +154,17 @@ const isDark = ref(useDark());
 }
 
 .research-part-text {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   text-align: justify;
 }
 
 .research-paper {
-  padding: 40px 0 70px 0;
+  text-align: justify;
+  padding: 40px 0 80px 0;
+}
+
+.research-paper ol {
+  /* margin: 0; */
+  padding: 0 0 0 20px;
 }
 </style>

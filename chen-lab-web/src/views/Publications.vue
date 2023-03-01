@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { useDark } from "@vueuse/core"; // 引入暗黑模式
-import { Avatar, Collection, Link } from "@element-plus/icons-vue"
 const isDark = ref(useDark());
 const papers = [
   {
@@ -108,29 +107,24 @@ const papers = [
                 <!-- Figure -->
                 <el-image style="width: 100%;" :src="paper.figure"></el-image>
                 <!-- Tags -->
-                <el-tag class="publications-papers-card-tags" v-for="(tag, index) in paper.keywords" :key="index">{{ tag
-                }}</el-tag>
+                <el-tag class="publications-papers-card-tags" v-for="(tag, index) in paper.keywords" :key="index">
+                  <font-awesome-icon :icon="['fas', 'tag']" /> {{ tag }}</el-tag>
               </el-col>
               <el-col :span="12" :offset="1">
                 <!-- Title -->
                 <span class="publications-papers-card-title">{{ paper.title }}</span>
                 <!-- Authors -->
-                <div class="publications-papers-card-authors"><el-icon>
-                    <Avatar />
-                  </el-icon> {{ paper.authors }}</div>
+                <div class="publications-papers-card-authors"><font-awesome-icon icon="people-group" /> {{ paper.authors }}</div>
                 <!-- Journal -->
-                <div class="publications-papers-card-journal"><el-icon>
-                    <Collection />
-                  </el-icon> {{ paper.journal }}</div>
+                <div class="publications-papers-card-journal"><font-awesome-icon icon="book" /> {{ paper.journal }}</div>
                 <!-- Abstract -->
                 <p class="publications-papers-card-abstract">{{ paper.abstract }}</p>
                 <!-- Links -->
                 <el-link class="publications-papers-card-links" :underline="false" target="_blank" type="primary"
-                  v-for="(value, key, index) in paper.links" :key="index" :href="value"><el-icon>
-                    <Link />
-                  </el-icon>{{ key }}</el-link>
+                  v-for="(value, key, index) in paper.links" :key="index" :href="value">
+                  <font-awesome-icon :icon="['fas', 'link']" />{{ key }}</el-link>
                 <h4>Citation the article</h4>
-                <span>{{ paper.citation }}</span>
+                <span><font-awesome-icon icon="quote-left" /> {{ paper.citation }}</span>
               </el-col>
             </el-row>
           </el-card>
