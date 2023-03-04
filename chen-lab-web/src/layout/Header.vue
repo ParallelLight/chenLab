@@ -17,11 +17,12 @@ const isDark = ref(useDark());
 
 
 <template>
-  <el-row :style="{ 'background-color': (!isDark ? 'white' : 'black') }">
+  <!-- <el-row :style="{ 'background-color': (!isDark ? 'white' : 'black') }"> -->
+  <el-row :class="(!isDark) ? 'header-wrap-light' : 'header-wrap-dark'">
     <el-col :span="2"></el-col>
     <el-col :span="20">
       <el-menu :default-active="route.path" router class="header-menu" mode="horizontal" :ellipsis="false"
-        :background-color="!isDark ? 'white' : 'black'">
+        :background-color="!isDark ? '#fffef8' : '#0f1423'">
         <!-- <div class="header-menu-logo header-menu-item-flex"><a href="/">Computational Bioinformatics Group</a></div> -->
         <div class="header-menu-logo-warp header-menu-item-flex">
           <a href="/">
@@ -32,7 +33,7 @@ const isDark = ref(useDark());
             </el-image>
           </a>
         </div>
-        <div class="header-menu-flex-grow "></div>
+        <div class="header-menu-flex-grow"></div>
         <el-menu-item index="/">Home</el-menu-item>
         <el-menu-item index="/research">Research</el-menu-item>
         <el-menu-item index="/team">Team</el-menu-item>
@@ -52,6 +53,16 @@ const isDark = ref(useDark());
 </template>
 
 <style>
+.header-wrap-light {
+  background-color: #fffef8;
+  box-shadow: 0 0 10px 10px #fffef8;
+}
+
+.header-wrap-dark {
+  background-color: #0f1423;
+  box-shadow: 0 0 10px 10px #0f1423;
+}
+
 .header-menu {
   border: none;
   padding: 40px 0px;
@@ -64,7 +75,7 @@ const isDark = ref(useDark());
 }
 
 .header-menu-item-flex {
-  border: 1px solid green;
+  /* border: 1px solid green; */
   display: flex;
   flex-direction: column;
   justify-content: space-around;

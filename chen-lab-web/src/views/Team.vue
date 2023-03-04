@@ -59,17 +59,17 @@ const team = [
           {
             icon: ['fab', 'github'],
             account: "Github",
-            link: "lnchen@sibs.ac.cn"
+            link: ""
           },
           {
             icon: ['fab', 'twitter'],
             account: "Twitter",
-            link: "lnchen@sibs.ac.cn"
+            link: ""
           },
           {
             icon: ['fab', 'linkedin'],
             account: "Linkedin",
-            link: "lnchen@sibs.ac.cn"
+            link: ""
           },
           {
             icon: ['fab', 'facebook'],
@@ -106,12 +106,12 @@ const team = [
         avatar: "https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png",
         name: "Xiaoping Liu",
         position: "Professor",
-        website: "http://cemcs.cas.cn/sourcedb_cemcs_cas/zw/pi/202008/t20200823_5670080.html",
+        website: "https://people.ucas.ac.cn/~liuxp",
         commerce: [
           {
             icon: ['fas', 'envelope'],
             account: "Email",
-            link: "mailto:lnchen@sibs.ac.cn"
+            link: "mailto:xpliu@ucas.ac.cn"
           },
           {
             icon: ['fab', 'google'],
@@ -126,7 +126,7 @@ const team = [
           {
             icon: ['fab', 'twitter'],
             account: "Twitter",
-            link: "lnchen@sibs.ac.cn"
+            link: ""
           },
           {
             icon: ['fab', 'linkedin'],
@@ -874,6 +874,28 @@ const team = [
     ]
   },
 ]
+const supports = [
+  {
+    unit: "CAS",
+    logo: "https://www.zkszl.net/zhongke/userfiles/1/images/zk-logo.png",
+    link: "https://www.cas.cn/"
+  },
+  {
+    unit: "UCAS",
+    logo: "https://www.ucas.ac.cn/newStyle/images/lougou.png",
+    link: "https://www.ucas.ac.cn/"
+  },
+  {
+    unit: "CEMCS",
+    logo: "http://cemcs.cas.cn//images/shxbs_logo.png",
+    link: "http://cemcs.cas.cn/"
+  },
+  {
+    unit: "HIAS",
+    logo: "http://hias.ucas.ac.cn/images/t_logo.png",
+    link: "http://hias.ucas.ac.cn/"
+  }
+]
 </script>
 
 
@@ -897,7 +919,7 @@ const team = [
     </el-row>
   </div>
   <!-- 统计 -->
-  <el-row class="team-statistic" :style="{ 'background-color': (!isDark ? 'white' : '#161B22') }">
+  <el-row class="team-statistic" :style="{ 'background-color': (!isDark ? '#e2e1e4' : '#22202e') }">
     <el-col :span="2"></el-col>
     <el-col :span="20">
       <el-row>
@@ -936,7 +958,7 @@ const team = [
     <el-col :span="2"></el-col>
   </el-row>
   <!-- 人像 -->
-  <el-row class="team-people" :style="{ 'background-color': (!isDark ? 'white' : '#0D1117') }"
+  <el-row class="team-people" :style="{ 'background-color': (!isDark ? '#cdd1d3' : '#131124') }"
     v-for="(identify, index) in team" :key="index">
     <el-col :span="2"></el-col>
     <el-col :span="20">
@@ -948,7 +970,8 @@ const team = [
             <el-image class="team-people-person-box-image" style="width: 100%;" :src="person.avatar"
               :fit="fill"></el-image>
             <!-- Info -->
-            <div class="team-people-person-box-info">
+            <div class="team-people-person-box-info"
+              :style="{ 'background': (!isDark ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.6)') }">
               <!-- Biography -->
               <p>{{ person.biography }}</p>
               <!-- Hometown -->
@@ -974,12 +997,14 @@ const team = [
               :key="index"><font-awesome-icon :icon="['fas', 'tag']" /> {{ interest }}</el-tag>
             <!-- Commerce -->
             <div>
-              <el-link class="team-people-person-card-commerce" :underline="false" target="_blank" type="primary"
-                v-for="(sns, index) in person.commerce" :key="index" :href="sns.link">
-                <el-tooltip :content="sns.account">
-                  <font-awesome-icon :icon="sns.icon" />
-                </el-tooltip>
-              </el-link>
+              <span v-for="(sns, index) in person.commerce" :key="index">
+                <el-link v-if="sns.link" class="team-people-person-card-commerce" :underline="false" target="_blank"
+                  type="primary" :href="sns.link">
+                  <el-tooltip :content="sns.account">
+                    <font-awesome-icon :icon="sns.icon" />
+                  </el-tooltip>
+                </el-link>
+              </span>
             </div>
           </div>
         </el-col>
@@ -988,24 +1013,24 @@ const team = [
     <el-col :span="2"></el-col>
   </el-row>
   <!-- 合作 -->
-  <el-row class="team-statistic" :style="{ 'background-color': (!isDark ? 'white' : '#161B22') }">
+  <el-row class="team-support" :style="{ 'background-color': (!isDark ? '#f1f0ed' : '#131824') }">
     <el-col :span="2"></el-col>
     <el-col :span="20">
-      <el-row>
-        <!-- 左侧文本 -->
-        <el-col :span="10">
-          <span class="web-text">We are mainly committed to the research of Biological Big Data and AI
-            theory and methods, including bioinformatics, computational systems biology, network biology, dynamic data
-            science methods, deep learning and applications, etc.
-            We are mainly committed to the research of Biological Big Data and AI theory and methods, including
-            bioinformatics, computational systems biology, network biology, dynamic data science methods, deep learning
-            and applications, etc.
-          </span>
+      <h1>CURRENT AND PREVIOUS SUPPORT</h1>
+      <el-row class="team-support-wrap">
+        <el-col :span="12">
+          <el-carousel :interval="1000" type="card" height="150px" indicator-position="outside">
+            <el-carousel-item class="team-support-wrap-card" v-for="(support, index) in supports" :key="index">
+              <el-link :underline="false" :href="support.link" target="_blank">
+                <el-image :src="support.logo" />
+              </el-link>
+            </el-carousel-item>
+          </el-carousel>
         </el-col>
-        <!-- 右侧图片 -->
-        <el-col class="team-statistic-image" :span="12" :offset="2">
-          <el-image style="width: 800px; height: 400px;"
-            src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"></el-image>
+        <el-col :span="8" :offset="4">
+          <span class="web-text">There is the composition of our group family and the family photo.There is the
+            composition of our group family and the family photo.
+          </span>
         </el-col>
       </el-row>
     </el-col>
@@ -1061,7 +1086,7 @@ const team = [
   text-align: justify;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  background: rgba(0, 0, 0, 0.6);
+  /* background: rgba(0, 0, 0, 0.6); */
   opacity: 0;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
@@ -1101,5 +1126,32 @@ const team = [
   /* border: 1px solid green; */
   font-size: 18px;
   margin: 0px 12px 0 0;
+}
+
+.team-support {
+  padding: 30px 0 100px 0;
+}
+
+.team-support-wrap {
+  padding: 30px 0;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  /* border: 1px solid green; */
+}
+
+.team-support-wrap-card {
+  padding: 10px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.el-carousel__item:nth-child(2n) {
+  background-color: #99a9bf;
+}
+
+.el-carousel__item:nth-child(2n + 1) {
+  background-color: #d3dce6;
 }
 </style>

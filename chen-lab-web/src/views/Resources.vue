@@ -70,7 +70,7 @@ const resources = [
   </div>
   <!-- 内容 -->
   <div>
-    <el-row class="resources-wrap" :style="{ 'background-color': (!isDark ? 'white' : '#0D1117') }">
+    <el-row class="resources-wrap" :style="{ 'background-color': (!isDark ? '#cdd1d3' : '#131124') }">
       <el-col :span="2"></el-col>
       <el-col :span="20">
         <!-- 核心内容 -->
@@ -85,7 +85,7 @@ const resources = [
             <ul>
               <li class="web-text" v-for="(tool, index) in resource.tools" :key="index">
                 <span>{{ tool.name }}: {{ tool.desc }}</span>
-                <el-link :underline="false" target="_blank" type="primary" :href="tool.link">
+                <el-link style="font-size: large;" :underline="false" target="_blank" type="primary" :href="tool.link">
                   <font-awesome-icon icon="arrow-up-right-from-square" />
                 </el-link>
               </li>
@@ -101,7 +101,7 @@ const resources = [
 
 <style scoped>
 .resources-wrap {
-  padding: 50px 0 100px 0;
+  padding: 50px 0;
 }
 
 .resources-wrap-divider {

@@ -21,7 +21,7 @@ const isDark = ref(useDark());
     <el-col :span="2"></el-col>
   </el-row>
   <!-- 首页内容 -->
-  <el-row :style="{ 'background-color': (!isDark ? 'white' : '#121212') }">
+  <el-row :style="{ 'background-color': (!isDark ? '#cdd1d3' : '#131124') }">
     <el-col :span="2"></el-col>
     <el-col :span="20">
       <!-- 招兵买马 -->

@@ -5,10 +5,10 @@ const isDark = ref(useDark());
 </script>
 
 <template>
-  <el-row :style="{ 'background-color': (!isDark ? 'white' : 'black') }">
+  <el-row :style="{ 'background-color': (!isDark ? '#f8f4ed' : '#0f1423') }">
     <el-col :span="2"></el-col>
     <el-col :span="20">
-      <el-menu class="footer-wrap" mode="horizontal" :ellipsis="false" :background-color="!isDark ? 'white' : 'black'">
+      <el-menu class="footer-wrap" mode="horizontal" :ellipsis="false" :background-color="!isDark ? '#f8f4ed' : '#0f1423'">
         <div>
           <a href="https://www.ucas.ac.cn/" target="_blank">
             <el-image class="footer-wrap-logo" src="https://www.ucas.ac.cn/newStyle/images/lougou.png">

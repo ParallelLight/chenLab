@@ -25,38 +25,24 @@ const isDark = ref(useDark());
   </div>
   <!-- 内容 -->
   <!-- 首页内容 -->
-  <el-row :style="{ 'background-color': (!isDark ? 'white' : '#121212') }">
+  <el-row :style="{ 'background-color': (!isDark ? '#cdd1d3' : '#131124') }">
     <el-col :span="2"></el-col>
     <el-col :span="20">
-      <!-- 招兵买马 -->
-      <div class="home-recruiting">
+      <div class="contact-recruiting">
         <el-row>
           <!-- 8→24 -->
           <el-col :span="8">
-            <h1>Recruiting</h1>
+            <h1>Contact us</h1>
+            <p class="web-text">Professor: Xiaoping Liu</p>
+            <p class="web-text">Hangzhou Institute for Advanced Study (HIAS)</p>
+            <p class="web-text">University of Chinese Academy of Sciences (UCAS)</p>
+            <p class="web-text">No.1 Xiangshan Branch, Hangzhou 310004, Zhejiang Province, China</p>
+            <p class="web-text">TEL : +86-571-86080306</p>
+            <p class="web-text">E-mail : xpliu@ucas.ac.cn</p>
           </el-col>
           <!-- 14→24，2→0 -->
           <el-col :span="14" :offset="2">
-            <h2>This is an Advertisement space</h2>
-            <span class="web-text">We are mainly committed to the research of Biological Big Data and AI theory and
-              methods, including
-              bioinformatics, computational systems biology, network biology, dynamic data science methods, deep
-              learning and applications, etc.We are mainly committed to the research of Biological Big Data and AI theory
-              and methods, including
-              bioinformatics, computational systems biology, network biology, dynamic data science methods, deep
-              learning and applications, etc.We are mainly committed to the research of Biological Big Data and AI theory
-              and methods, including
-              bioinformatics, computational systems biology, network biology, dynamic data science methods, deep
-              learning and applications, etc.We are mainly committed to the research of Biological Big Data and AI theory
-              and methods, including
-              bioinformatics, computational systems biology, network biology, dynamic data science methods, deep
-              learning and applications, etc.We are mainly committed to the research of Biological Big Data and AI theory
-              and methods, including
-              bioinformatics, computational systems biology, network biology, dynamic data science methods, deep
-              learning and applications, etc.We are mainly committed to the research of Biological Big Data and AI theory
-              and methods, including
-              bioinformatics, computational systems biology, network biology, dynamic data science methods, deep
-              learning and applications, etc.</span>
+            <iframe style="width: 100%; height: 100%;" src="/static/Map.html" frameborder="0"></iframe>
           </el-col>
         </el-row>
       </div>
@@ -65,7 +51,7 @@ const isDark = ref(useDark());
   </el-row>
 </template>
 <style scoped>
-.home-recruiting {
+.contact-recruiting {
   padding: 50px 0 80px 0;
 }
 </style>

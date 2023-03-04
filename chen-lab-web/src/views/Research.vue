@@ -74,7 +74,7 @@ const researches = [
     </el-row>
   </div>
   <!-- 介绍 -->
-  <el-row class="research-intro" :style="{ 'background-color': (!isDark ? 'white' : '#161B22') }">
+  <el-row class="research-intro" :style="{ 'background-color': (!isDark ? '#e2e1e4' : '#22202e') }">
     <el-col :span="2"></el-col>
     <el-col :span="20">
       <el-row>
@@ -100,13 +100,14 @@ const researches = [
   <!-- 内容 -->
   <div v-for="(research, index) in researches" :key="index">
     <!-- Part -->
-    <el-row class="research-part" :style="{ 'background-color': (!isDark ? 'white' : '#0D1117') }">
+    <el-row class="research-part" :style="{ 'background-color': (!isDark ? '#cdd1d3' : '#131124') }">
       <el-col :span="2"></el-col>
       <el-col :span="20">
         <h1>{{ research.title }}</h1>
         <el-row>
           <el-col :span="10">
-            <el-image style="width: 60%;" fit="fill" :src="research.image"></el-image>
+            <el-image style="width: 60%;" fit="fill" :src="research.image" :zoom-rate="1.2"
+              :preview-src-list="[research.image]" :initial-index="4" hide-on-click-modal="true"></el-image>
           </el-col>
           <el-col :span="10" :offset="4" class="research-part-text">
             <h2>{{ research.subtitle }}</h2>
@@ -117,14 +118,14 @@ const researches = [
       <el-col :span="2"></el-col>
     </el-row>
     <!-- Papers -->
-    <el-row class="research-paper" :style="{ 'background-color': (!isDark ? 'white' : '#363739') }">
+    <el-row class="research-paper" :style="{ 'background-color': (!isDark ? '#f1f0ed' : '#131824') }">
       <el-col :span="2"></el-col>
       <el-col :span="20">
         <h2>Related Papers of {{ research.title }}</h2>
         <ol>
           <li class="web-text" v-for="(paper, index) in research.papers" :key="index">
             <span>{{ paper.title }}</span>
-            <el-link :underline="false" target="_blank" type="primary" :href="paper.doi">
+            <el-link style="font-size: large;" :underline="false" target="_blank" type="primary" :href="paper.doi">
               <font-awesome-icon icon="arrow-up-right-from-square" />
             </el-link>
           </li>
