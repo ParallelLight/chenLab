@@ -37,7 +37,7 @@ const srcList = [
 
     <div class="box">
         <a href="#">
-            <div class="img"><img src="图片路径"></div>
+            <div class="img"><img src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"></div>
             <div class="text">
                 <h3>提示文字</h3>
             </div>

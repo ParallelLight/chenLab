@@ -1,7 +1,11 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, reactive } from "vue";
 import { useDark } from "@vueuse/core"; // 引入暗黑模式
+
 const isDark = ref(useDark());
+const contact = reactive({
+  map: "/api/Map.html"
+})
 </script>
 
 
@@ -41,8 +45,8 @@ const isDark = ref(useDark());
             <p class="web-text">E-mail : xpliu@ucas.ac.cn</p>
           </el-col>
           <!-- 14→24，2→0 -->
-          <el-col :span="14" :offset="2">
-            <iframe style="width: 100%; height: 100%;" src="/static/Map.html" frameborder="0"></iframe>
+          <el-col :span="14" :offset="2" v-if="contact.map">
+            <iframe style="width: 100%; height: 100%;" :src="contact.map" frameborder="0"></iframe>
           </el-col>
         </el-row>
       </div>

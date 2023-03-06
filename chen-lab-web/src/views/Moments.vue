@@ -1,61 +1,63 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { useDark } from "@vueuse/core"; // 引入暗黑模式
+import Axios from "axios";
 
 const isDark = ref(useDark());
+const moments = ref()
+Axios.get('/api/moments')
+  .then((res) => {
+    console.log(res)
+    if (res.status == 200) {
+      moments.value = res.data.data.moments
+    }
+  })
+  .catch((err) => {
+    console.log(err)
+  })
+// const moments = [
+//   {
+//     date: "2018-04-15",
+//     title: "An important eventAn important eventAn important eventAn important eventAn important eventAn important event",
+//     image: ""
+//   },
+//   {
+//     date: "2018-04-15",
+//     title: "An important eventAn important eventAn important eventAn important eventAn important eventAn important eventAn important event",
+//     image: "https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
+//   },
+//   {
+//     date: "2018-04-15",
+//     title: "An important eventAn important eventAn important eventAn important eventAn important eventAn important eventAn important eventAn important eventAn important eventAn important eventAn important eventAn important event",
+//     image: ""
+//   },
+//   {
+//     date: "2018-04-15",
+//     title: "An important eventAn important eventAn important eventAn important event",
+//     image: "https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
+//   },
+//   {
+//     date: "2018-04-15",
+//     title: "An important event",
+//     image: ""
+//   },
+//   {
+//     date: "2018-04-15",
+//     title: "An important event",
+//     image: ""
+//   },
+//   {
+//     date: "2018-04-15",
+//     title: "An important event",
+//     image: "https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
+//   },
+//   {
+//     date: "2018-04-15",
+//     title: "An important event",
+//     image: ""
+//   }
+// ]
 
-const moments = [
-  {
-    date: "2018-04-15",
-    title: "An important eventAn important eventAn important eventAn important eventAn important eventAn important event",
-    image: ""
-  },
-  {
-    date: "2018-04-15",
-    title: "An important eventAn important eventAn important eventAn important eventAn important eventAn important eventAn important event",
-    image: "https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
-  },
-  {
-    date: "2018-04-15",
-    title: "An important eventAn important eventAn important eventAn important eventAn important eventAn important eventAn important eventAn important eventAn important eventAn important eventAn important eventAn important event",
-    image: ""
-  },
-  {
-    date: "2018-04-15",
-    title: "An important eventAn important eventAn important eventAn important event",
-    image: "https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
-  },
-  {
-    date: "2018-04-15",
-    title: "An important event",
-    image: ""
-  },
-  {
-    date: "2018-04-15",
-    title: "An important event",
-    image: ""
-  },
-  {
-    date: "2018-04-15",
-    title: "An important event",
-    image: "https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
-  },
-  {
-    date: "2018-04-15",
-    title: "An important event",
-    image: ""
-  }
-]
-
-const srcList = [
-  'https://fuss10.elemecdn.com/a/3f/3302e58f9a181d2509f3dc0fa68b0jpeg.jpeg',
-  'https://fuss10.elemecdn.com/1/34/19aa98b1fcb2781c4fba33d850549jpeg.jpeg',
-  'https://fuss10.elemecdn.com/0/6f/e35ff375812e6b0020b6b4e8f9583jpeg.jpeg',
-  'https://fuss10.elemecdn.com/9/bb/e27858e973f5d7d3904835f46abbdjpeg.jpeg',
-  'https://fuss10.elemecdn.com/d/e6/c4d93a3805b3ce3f323f7974e6f78jpeg.jpeg',
-  'https://fuss10.elemecdn.com/3/28/bbf893f792f03a54408b3b7a7ebf0jpeg.jpeg',
-  'https://fuss10.elemecdn.com/2/11/6535bcfb26e4c79b48ddde44f4b6fjpeg.jpeg',
-]
 </script>
 
 <template>
@@ -80,7 +82,7 @@ const srcList = [
   <el-row :style="{ 'background-color': (!isDark ? '#cdd1d3' : '#131124') }">
     <el-col :span="2"></el-col>
     <el-col :span="20">
-      <el-timeline class="moments-timeline">
+      <el-timeline class="moments-timeline" v-if="moments">
         <el-timeline-item v-for="(moment, index) in moments" :key="index"
           :class="index % 2 === 0 ? 'timeline-left' : 'timeline-right'" :timestamp="moment.date" placement="top"
           type="success" size="large" hollow="true">
