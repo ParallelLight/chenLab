@@ -186,7 +186,7 @@ function scrollToView(value: string): void {
         :key="index">
         <!-- Year -->
         <el-timeline-item type="success" size="large" hollow="true">
-          <h1>{{ publication.year }} ({{ publication.papers.length }} total)</h1>
+          <h1>{{ publication.year }} ({{ publication.count }} total)</h1>
         </el-timeline-item>
         <!-- Papers -->
         <el-timeline-item v-for="(paper, index) in publication.papers" :key="index" :timestamp="paper.date"
@@ -206,8 +206,13 @@ function scrollToView(value: string): void {
                 <!-- Title -->
                 <span class="publications-papers-card-title">{{ paper.title }}</span>
                 <!-- Authors -->
-                <div class="publications-papers-card-authors"><font-awesome-icon icon="people-group" /> {{ paper.authors
-                }}</div>
+                <div class="publications-papers-card-authors"><font-awesome-icon icon="people-group" />
+                  <span v-for="(author, index) in paper.authors" :key="index">
+                    <el-link v-if="author.link" target="_blank" type="primary" :href="author.link">
+                      {{ author.name }}. </el-link>
+                    <span v-else>{{ author.name }}</span>
+                  </span>
+                </div>
                 <!-- Journal -->
                 <div class="publications-papers-card-journal"><font-awesome-icon icon="book" /> {{ paper.journal }}</div>
                 <!-- Abstract -->

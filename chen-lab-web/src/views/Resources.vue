@@ -91,7 +91,7 @@ Axios.get('/api/resources')
         <el-row v-for="(resource, index) in resources" :key="index">
           <!-- 8→24 -->
           <el-col :span="8">
-            <h1>{{ resource.title }}</h1>
+            <h1>{{ resource._id }}</h1>
           </el-col>
           <!-- 14→24，2→0 -->
           <el-col :span="14" :offset="2">

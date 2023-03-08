@@ -139,8 +139,9 @@ Axios.get('/api/research')
         <h2>Related Papers of {{ research.title }}</h2>
         <ol>
           <li class="web-text" v-for="(paper, index) in research.papers" :key="index">
-            <span>{{ paper.title }}</span>
-            <el-link style="font-size: large;" :underline="false" target="_blank" type="primary" :href="paper.doi">
+            <span>{{ paper.citation }}</span>
+            <el-link style="font-size: large;" :underline="false" target="_blank" type="primary"
+              :href="'https://doi.org/' + paper.doi">
               <font-awesome-icon icon="arrow-up-right-from-square" />
             </el-link>
           </li>

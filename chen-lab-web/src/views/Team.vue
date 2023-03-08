@@ -6,14 +6,13 @@ import Axios from "axios";
 
 const fill = ref(true)
 const isDark = ref(useDark());
-const statistics = ref()
+// const statistics = ref()
 const team = ref()
 const supports = ref()
 Axios.get('/api/team')
   .then((res) => {
     console.log(res)
     if (res.status == 200) {
-      statistics.value = res.data.data.statistics;
       team.value = res.data.data.team;
       supports.value = res.data.data.supports;
     }
@@ -946,9 +945,9 @@ Axios.get('/api/team')
         <el-col :span="10">
           <!-- 统计数量 -->
           <el-row :gutter="15">
-            <el-col :span="8" v-for="(statistic, index) in statistics" :key="index">
+            <el-col :span="8" v-for="(statistic, index) in team" :key="index">
               <el-card class="team-statistic-card">
-                <el-statistic :value="statistic.value">
+                <el-statistic :value="statistic.count">
                   <template #title>
                     <div style="display: inline-flex; align-items: center">
                       {{ statistic.title }}
@@ -981,7 +980,7 @@ Axios.get('/api/team')
     v-for="(identify, index) in team" :key="index">
     <el-col :span="2"></el-col>
     <el-col :span="20">
-      <h1>{{ identify.type }}</h1>
+      <h1>{{ identify.title }}</h1>
       <el-row :gutter="70">
         <el-col class="team-people-person" :span="8" v-for="(person, index) in identify.people" :key="index">
           <!-- Image + Info -->
@@ -1017,7 +1016,7 @@ Axios.get('/api/team')
             <!-- Commerce -->
             <div>
               <span v-for="(sns, index) in person.commerce" :key="index">
-                <el-link v-if="sns.link" class="team-people-person-card-commerce" :underline="false" target="_blank"
+                <el-link class="team-people-person-card-commerce" :underline="false" target="_blank"
                   type="primary" :href="sns.link">
                   <el-tooltip :content="sns.account">
                     <font-awesome-icon :icon="sns.icon" />

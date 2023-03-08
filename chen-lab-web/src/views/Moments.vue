@@ -82,7 +82,7 @@ Axios.get('/api/moments')
   <el-row :style="{ 'background-color': (!isDark ? '#cdd1d3' : '#131124') }">
     <el-col :span="2"></el-col>
     <el-col :span="20">
-      <el-timeline class="moments-timeline" v-if="moments">
+      <el-timeline class="moments-timeline">
         <el-timeline-item v-for="(moment, index) in moments" :key="index"
           :class="index % 2 === 0 ? 'timeline-left' : 'timeline-right'" :timestamp="moment.date" placement="top"
           type="success" size="large" hollow="true">

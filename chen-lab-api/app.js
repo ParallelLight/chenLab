@@ -4,6 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+var mongoDB = require("./db/mongodb");
+
 // 引入页面
 var homeRouter = require('./routes/home');
 var researchRouter = require('./routes/research');
@@ -23,6 +25,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
 
 //跨域问题解决方面
 // const cors = require('cors');

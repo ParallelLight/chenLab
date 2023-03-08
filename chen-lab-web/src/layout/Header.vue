@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref, toRefs } from "vue";
+import { ref } from "vue";
 import { useRoute } from 'vue-router'; // 引入路由
 import { useDark } from "@vueuse/core";  // 引入暗黑模式
 import { Sunny, Moon } from "@element-plus/icons-vue"
