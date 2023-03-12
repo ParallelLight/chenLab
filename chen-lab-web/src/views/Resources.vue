@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import { useDark } from "@vueuse/core"; // 引入暗黑模式
 import Axios from "axios";
 
@@ -16,6 +16,14 @@ Axios.get('/api/resources')
     console.log(err)
   })
 
+
+const screenWidth = ref();
+onMounted(() => {
+  screenWidth.value = document.body.clientWidth;
+  window.onresize = () => {
+    screenWidth.value = document.body.clientWidth;
+  }
+})
 // const resources = [
 //   {
 //     title: "Database",
@@ -72,7 +80,7 @@ Axios.get('/api/resources')
       <el-col :span="2"></el-col>
       <el-col :span="20">
         <el-row>
-          <el-col class="wrapper-sketch-text" :span="14">
+          <el-col class="wrapper-sketch-text" :span="screenWidth > 1200 ? 14 : 24">
             <div class="wrapper-sketch-text-title">Resources</div>
             <div class="wrapper-sketch-text-subtitle">The resources of our work</div>
             <h1 class="wrapper-sketch-text-content">There are some our resources</h1>
@@ -90,11 +98,11 @@ Axios.get('/api/resources')
         <!-- 核心内容 -->
         <el-row v-for="(resource, index) in resources" :key="index">
           <!-- 8→24 -->
-          <el-col :span="8">
+          <el-col :span="screenWidth > 1200 ? 8 : 24">
             <h1>{{ resource._id }}</h1>
           </el-col>
           <!-- 14→24，2→0 -->
-          <el-col :span="14" :offset="2">
+          <el-col :span="screenWidth > 1200 ? 14 : 24" :offset="screenWidth > 1200 ? 2 : 0">
             <h2>{{ resource.subtitle }}</h2>
             <ul>
               <li class="web-text" v-for="(tool, index) in resource.tools" :key="index">

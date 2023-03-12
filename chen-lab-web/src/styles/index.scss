@@ -19,7 +19,6 @@ body {
 .web-text {
   font-size: 20px;
   line-height: 1.5;
-  // color: red;
 }
 
 // 子页开屏背景图
@@ -57,14 +56,33 @@ body {
   font-weight: 100;
 }
 
-// a {
-//   color: var(--ep-color-primary);
-// }
+/* 判断屏幕宽度小于640px后使用百分比 */
+@media screen and (max-width: 640px) {
+  .wrapper-sketch {
+    padding: 100px 0;
+  }
 
+  .wrapper-sketch-text-title {
+    font-size: 32px;
+    font-weight: 500;
+  }
 
-// code {
-//   border-radius: 2px;
-//   padding: 2px 4px;
-//   background-color: var(--ep-color-primary-light-9);
-//   color: var(--ep-color-primary);
-// }
+  .wrapper-sketch-text-subtitle {
+    font-size: 44px;
+    font-weight: bold;
+  }
+
+  .wrapper-sketch-text-content {
+    font-size: 22px;
+    font-weight: 100;
+  }
+}
+
+/* 判断屏幕宽度小于540px后使用百分比 */
+@media screen and (max-width: 540px) {
+  .web-text {
+    font-size: 18px;
+    line-height: 1.3;
+    // color: red;
+  }
+}

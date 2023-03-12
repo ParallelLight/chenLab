@@ -1,13 +1,20 @@
 <script setup lang="ts">
-import { ref, reactive } from "vue";
+import { ref, reactive, onMounted } from "vue";
 import { useDark } from "@vueuse/core"; // 引入暗黑模式
 
 const isDark = ref(useDark());
 const contact = reactive({
   map: "/api/Map.html"
 })
-</script>
 
+const screenWidth = ref();
+onMounted(() => {
+  screenWidth.value = document.body.clientWidth;
+  window.onresize = () => {
+    screenWidth.value = document.body.clientWidth;
+  }
+})
+</script>
 
 <template>
   <!-- 简述 -->
@@ -17,7 +24,7 @@ const contact = reactive({
       <el-col :span="2"></el-col>
       <el-col :span="20">
         <el-row>
-          <el-col class="wrapper-sketch-text" :span="14">
+          <el-col class="wrapper-sketch-text" :span="screenWidth > 1200 ? 14 : 24">
             <div class="wrapper-sketch-text-title">Contact</div>
             <div class="wrapper-sketch-text-subtitle">You can contact us</div>
             <h1 class="wrapper-sketch-text-content">coverage</h1>
@@ -35,7 +42,7 @@ const contact = reactive({
       <div class="contact-recruiting">
         <el-row>
           <!-- 8→24 -->
-          <el-col :span="8">
+          <el-col :span="screenWidth > 1200 ? 8 : 24">
             <h1>Contact us</h1>
             <p class="web-text">Professor: Xiaoping Liu</p>
             <p class="web-text">Hangzhou Institute for Advanced Study (HIAS)</p>
@@ -45,8 +52,9 @@ const contact = reactive({
             <p class="web-text">E-mail : xpliu@ucas.ac.cn</p>
           </el-col>
           <!-- 14→24，2→0 -->
-          <el-col :span="14" :offset="2" v-if="contact.map">
-            <iframe style="width: 100%; height: 100%;" :src="contact.map" frameborder="0"></iframe>
+          <el-col :span="screenWidth > 1200 ? 14 : 24" :offset="screenWidth > 1200 ? 2 : 0" v-if="contact.map">
+            <iframe :style="screenWidth > 1200 ? 'width: 100%; height: 100%;' : 'width: 100%; height: 400px; margin-top: 30px;'" :src="contact.map"
+              frameborder="0"></iframe>
           </el-col>
         </el-row>
       </div>

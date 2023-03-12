@@ -26,16 +26,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
-//跨域问题解决方面
-// const cors = require('cors');
-// app.use(cors({
-//   origin: ['http://localhost:5173'],
-//   methods: ['GET', 'POST'],
-// }));
 // 设置跨域访问
+const cors = require('cors');
+app.use(cors());
 // app.all('*', function (req, res, next) {
-//   res.header("Access-Control-Allow-Origin", "http://localhost:5173");
+//   res.header("Access-Control-Allow-Origin", "http://172.23.0.2:5173");
+//   // res.header("Access-Control-Allow-Origin", "http://localhost:5173");
 //   res.header("Access-Control-Allow-Headers", "X-Requested-With");
 //   res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
 //   res.header("X-Powered-By", ' 3.2.1')

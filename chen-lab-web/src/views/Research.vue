@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import { useDark } from "@vueuse/core"; // 引入暗黑模式
 import Axios from "axios";
 
@@ -17,6 +17,14 @@ Axios.get('/api/research')
     console.log(err)
   })
 
+
+const screenWidth = ref();
+onMounted(() => {
+  screenWidth.value = document.body.clientWidth;
+  window.onresize = () => {
+    screenWidth.value = document.body.clientWidth;
+  }
+})
 // const researches = [
 //   {
 //     title: "Part 1",
@@ -78,7 +86,7 @@ Axios.get('/api/research')
       <el-col :span="2"></el-col>
       <el-col :span="20">
         <el-row>
-          <el-col class="wrapper-sketch-text" :span="14">
+          <el-col class="wrapper-sketch-text" :span="screenWidth > 1200 ? 14 : 24">
             <div class="wrapper-sketch-text-title">Research</div>
             <div class="wrapper-sketch-text-subtitle">Computational systems biology & Bioinformatics</div>
             <h1 class="wrapper-sketch-text-content">Go for Science and Seek for Progress</h1>
@@ -94,7 +102,7 @@ Axios.get('/api/research')
     <el-col :span="20">
       <el-row>
         <!-- 左侧文本 -->
-        <el-col :span="10">
+        <el-col :span="screenWidth > 1200 ? 10 : 24">
           <span class="web-text">We are mainly committed to the research of Biological Big Data and AI
             theory and methods, including bioinformatics, computational systems biology, network biology, dynamic data
             science methods, deep learning and applications, etc.
@@ -104,7 +112,7 @@ Axios.get('/api/research')
           </span>
         </el-col>
         <!-- 右侧图片 -->
-        <el-col class="research-intro-image" :span="12" :offset="2">
+        <el-col class="research-intro-image" :span="screenWidth > 1200 ? 12 : 24" :offset="screenWidth > 1200 ? 2 : 0">
           <el-image
             src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"></el-image>
         </el-col>
@@ -120,11 +128,11 @@ Axios.get('/api/research')
       <el-col :span="20">
         <h1>{{ research.title }}</h1>
         <el-row>
-          <el-col :span="10">
+          <el-col :span="screenWidth > 1200 ? 10 : 24">
             <el-image style="width: 60%;" fit="fill" :src="research.image" :zoom-rate="1.2"
               :preview-src-list="[research.image]" :initial-index="4" hide-on-click-modal="true"></el-image>
           </el-col>
-          <el-col :span="10" :offset="4" class="research-part-text">
+          <el-col :span="screenWidth > 1200 ? 10 : 24" :offset="screenWidth > 1200 ? 4 : 0" class="research-part-text">
             <h2>{{ research.subtitle }}</h2>
             <span class="web-text">{{ research.content }}</span>
           </el-col>
@@ -133,7 +141,8 @@ Axios.get('/api/research')
       <el-col :span="2"></el-col>
     </el-row>
     <!-- Papers -->
-    <el-row class="research-paper" :style="{ 'background-color': (!isDark ? '#f1f0ed' : '#131824') }">
+    <el-row v-if="research.papers.length > 0" class="research-paper"
+      :style="{ 'background-color': (!isDark ? '#f1f0ed' : '#131824') }">
       <el-col :span="2"></el-col>
       <el-col :span="20">
         <h2>Related Papers of {{ research.title }}</h2>
@@ -183,5 +192,16 @@ Axios.get('/api/research')
 .research-paper ol {
   /* margin: 0; */
   padding: 0 0 0 20px;
+}
+
+/* 判断屏幕宽度小于540px后使用百分比 */
+@media screen and (max-width: 1200px) {
+  .research-intro-image {
+    margin: 30px 0 0 0;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    /* border: 1px solid green; */
+  }
 }
 </style>

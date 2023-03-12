@@ -9,6 +9,7 @@ mongoose.set("strictQuery", true);
 // uri：mongodb://user:pass@localhost:port/database
 // mongodb+srv://madmin:<password>@clustername.mongodb.net/<dbname>?retryWrites=true&w=majority
 
+
 // 连接 mongoDB 数据库
 mongoose.connect(uri, { useNewUrlParser: true });
 console.log("数据库已连接......")

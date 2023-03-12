@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import { useDark } from "@vueuse/core"; // 引入暗黑模式
 import Axios from "axios";
 
@@ -29,7 +29,13 @@ function scrollToView(value: string): void {
   }
 }
 
-
+const screenWidth = ref();
+onMounted(() => {
+  screenWidth.value = document.body.clientWidth;
+  window.onresize = () => {
+    screenWidth.value = document.body.clientWidth;
+  }
+})
 // const publications = [
 //   {
 //     year: "2023",
@@ -162,7 +168,7 @@ function scrollToView(value: string): void {
       <el-col :span="2"></el-col>
       <el-col :span="20">
         <el-row>
-          <el-col class="wrapper-sketch-text" :span="14">
+          <el-col class="wrapper-sketch-text" :span="screenWidth > 1200 ? 14 : 24">
             <div class="wrapper-sketch-text-title">Publications</div>
             <div class="wrapper-sketch-text-subtitle">The show of our work</div>
             <h1 class="wrapper-sketch-text-content">Access the lab's published research and news media coverage</h1>
@@ -194,23 +200,25 @@ function scrollToView(value: string): void {
           <!-- <h3>{{ paper.date }}</h3> -->
           <el-card class="publications-papers-card">
             <el-row>
-              <el-col :span="11">
+              <el-col :span="screenWidth > 1600 ? 11 : 24">
                 <!-- Figure -->
-                <el-image style="width: 100%;" :src="paper.figure" :zoom-rate="1.2" :preview-src-list="[paper.figure]"
-                  :initial-index="4" hide-on-click-modal="true"></el-image>
+                <el-image v-if="paper.figure" style="width: 100%; margin-bottom: 20px;" :src="paper.figure"
+                  :zoom-rate="1.2" :preview-src-list="[paper.figure]" :initial-index="4"
+                  hide-on-click-modal="true"></el-image>
                 <!-- Tags -->
                 <el-tag class="publications-papers-card-tags" v-for="(tag, index) in paper.keywords" :key="index">
                   <font-awesome-icon :icon="['fas', 'tag']" /> {{ tag }}</el-tag>
               </el-col>
-              <el-col :span="12" :offset="1">
+              <el-col :span="screenWidth > 1600 ? 12 : 24" :offset="screenWidth > 1600 ? 1 : 0">
                 <!-- Title -->
                 <span class="publications-papers-card-title">{{ paper.title }}</span>
                 <!-- Authors -->
-                <div class="publications-papers-card-authors"><font-awesome-icon icon="people-group" />
-                  <span v-for="(author, index) in paper.authors" :key="index">
-                    <el-link v-if="author.link" target="_blank" type="primary" :href="author.link">
-                      {{ author.name }}. </el-link>
-                    <span v-else>{{ author.name }}</span>
+                <div class="publications-papers-card-authors">
+                  <font-awesome-icon icon="people-group" />
+                  <span v-for="(author, index) in paper.authors" :key="index"><el-link v-if="author.link" target="_blank"
+                      type="primary" :href="author.link" style="font-size: 16px; font-weight: bold;"> {{ author.name }}.
+                    </el-link>
+                    <span v-else>{{ author.name }}. </span>
                   </span>
                 </div>
                 <!-- Journal -->
@@ -221,8 +229,7 @@ function scrollToView(value: string): void {
                 <el-link class="publications-papers-card-links" :underline="false" target="_blank" type="primary"
                   v-for="(value, key, index) in paper.links" :key="index" :href="value">
                   <font-awesome-icon :icon="['fas', 'link']" />{{ key }}</el-link>
-                <h4>Citation the article</h4>
-                <span><font-awesome-icon icon="quote-left" /> {{ paper.citation }}</span>
+                <div><font-awesome-icon icon="quote-left" /> {{ paper.citation }}</div>
               </el-col>
             </el-row>
           </el-card>
@@ -257,7 +264,7 @@ function scrollToView(value: string): void {
 }
 
 .publications-papers-card-tags {
-  margin: 20px 10px 0 0;
+  margin: 0 12px 10px 0;
 }
 
 .publications-papers-card-title {
@@ -282,6 +289,6 @@ function scrollToView(value: string): void {
 
 .publications-papers-card-links {
   font-size: medium;
-  margin: 0 20px 0 0;
+  margin: 0 20px 10px 0;
 }
 </style>

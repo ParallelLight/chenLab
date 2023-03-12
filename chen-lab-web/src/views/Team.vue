@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import { useDark } from "@vueuse/core"; // 引入暗黑模式
 import { Warning } from '@element-plus/icons-vue';
 import Axios from "axios";
@@ -21,7 +21,13 @@ Axios.get('/api/team')
     console.log(err)
   })
 
-
+const screenWidth = ref();
+onMounted(() => {
+  screenWidth.value = document.body.clientWidth;
+  window.onresize = () => {
+    screenWidth.value = document.body.clientWidth;
+  }
+})
 // const statistics = [
 //   {
 //     title: "Professors",
@@ -926,7 +932,7 @@ Axios.get('/api/team')
       <el-col :span="2"></el-col>
       <el-col :span="20">
         <el-row>
-          <el-col class="wrapper-sketch-text" :span="14">
+          <el-col class="wrapper-sketch-text" :span="screenWidth > 1200 ? 14 : 24">
             <div class="wrapper-sketch-text-title">Team</div>
             <div class="wrapper-sketch-text-subtitle">A Happy Family</div>
             <h1 class="wrapper-sketch-text-content">Come from all over the world to meet</h1>
@@ -942,10 +948,10 @@ Axios.get('/api/team')
     <el-col :span="20">
       <el-row>
         <!-- 左侧内容 -->
-        <el-col :span="10">
+        <el-col :span="screenWidth > 1200 ? 8 : 24">
           <!-- 统计数量 -->
           <el-row :gutter="15">
-            <el-col :span="8" v-for="(statistic, index) in team" :key="index">
+            <el-col :span="12" v-for="(statistic, index) in team" :key="index">
               <el-card class="team-statistic-card">
                 <el-statistic :value="statistic.count">
                   <template #title>
@@ -967,8 +973,8 @@ Axios.get('/api/team')
           </span>
         </el-col>
         <!-- 右侧图片 -->
-        <el-col class="team-statistic-image" :span="12" :offset="2">
-          <el-image
+        <el-col class="team-statistic-image" :span="screenWidth > 1200 ? 14 : 24" :offset="screenWidth > 1200 ? 2 : 24">
+          <el-image style="width: 100%; height: 360px;"
             src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"></el-image>
         </el-col>
       </el-row>
@@ -982,7 +988,8 @@ Axios.get('/api/team')
     <el-col :span="20">
       <h1>{{ identify.title }}</h1>
       <el-row :gutter="70">
-        <el-col class="team-people-person" :span="8" v-for="(person, index) in identify.people" :key="index">
+        <el-col class="team-people-person" :span="screenWidth > 1600 ? 8 : (screenWidth > 800 ? 12 : 24)"
+          v-for="(person, index) in identify.people" :key="index">
           <!-- Image + Info -->
           <div class="team-people-person-box">
             <el-image class="team-people-person-box-image" style="width: 100%;" :src="person.avatar"
@@ -1011,13 +1018,15 @@ Axios.get('/api/team')
               }}</el-tag>
             </div>
             <!-- Interests -->
-            <el-tag class="team-people-person-card-interests" v-for="(interest, index) in person.interests"
-              :key="index"><font-awesome-icon :icon="['fas', 'tag']" /> {{ interest }}</el-tag>
+            <div class="team-people-person-card-interests-wrapper">
+              <el-tag class="team-people-person-card-interests" v-for="(interest, index) in person.interests"
+                :key="index"><font-awesome-icon :icon="['fas', 'tag']" /> {{ interest }}</el-tag>
+            </div>
             <!-- Commerce -->
             <div>
               <span v-for="(sns, index) in person.commerce" :key="index">
-                <el-link class="team-people-person-card-commerce" :underline="false" target="_blank"
-                  type="primary" :href="sns.link">
+                <el-link class="team-people-person-card-commerce" :underline="false" target="_blank" type="primary"
+                  :href="sns.link">
                   <el-tooltip :content="sns.account">
                     <font-awesome-icon :icon="sns.icon" />
                   </el-tooltip>
@@ -1036,7 +1045,7 @@ Axios.get('/api/team')
     <el-col :span="20">
       <h1>CURRENT AND PREVIOUS SUPPORT</h1>
       <el-row class="team-support-wrap">
-        <el-col :span="12">
+        <el-col :span="screenWidth > 1200 ? 12 : 24">
           <el-carousel :interval="1000" type="card" height="150px" indicator-position="outside">
             <el-carousel-item class="team-support-wrap-card" v-for="(support, index) in supports" :key="index">
               <el-link :underline="false" :href="support.link" target="_blank">
@@ -1045,7 +1054,7 @@ Axios.get('/api/team')
             </el-carousel-item>
           </el-carousel>
         </el-col>
-        <el-col :span="8" :offset="4">
+        <el-col :span="screenWidth > 1200 ? 8 : 24" :offset="screenWidth > 1200 ? 4 : 0">
           <span class="web-text">There is the composition of our group family and the family photo.There is the
             composition of our group family and the family photo.
           </span>
@@ -1068,9 +1077,10 @@ Axios.get('/api/team')
 }
 
 .team-statistic-image {
-  display: flex;
-  justify-content: right;
-  align-items: center;
+  box-shadow: var(--el-box-shadow);
+  /* display: flex; */
+  /* justify-content: right; */
+  /* align-items: center; */
 }
 
 .team-people {
@@ -1136,8 +1146,12 @@ Axios.get('/api/team')
   font-style: italic;
 }
 
+.team-people-person-card-interests-wrapper {
+  margin: 12px 0 0 0;
+}
+
 .team-people-person-card-interests {
-  margin: 12px 12px 16px 0;
+  margin: 0 16px 12px 0;
 }
 
 .team-people-person-card-commerce {
@@ -1171,5 +1185,13 @@ Axios.get('/api/team')
 
 .el-carousel__item:nth-child(2n + 1) {
   background-color: #d3dce6;
+}
+
+/* 判断屏幕宽度小于540px后使用百分比 */
+@media screen and (max-width: 1200px) {
+  .team-statistic-image {
+    margin: 30px 0 0 0;
+    /* border: 1px solid green; */
+  }
 }
 </style>
