@@ -7,7 +7,7 @@ const isDark = ref(useDark());
 const moments = ref()
 Axios.get('/api/moments')
   .then((res) => {
-    console.log(res)
+    // console.log(res)
     if (res.status == 200) {
       moments.value = res.data.data.moments
     }

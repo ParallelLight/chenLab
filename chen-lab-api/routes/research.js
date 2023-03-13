@@ -6,22 +6,29 @@ const { mongoose } = require('mongoose');
 /* Interests 增加记录 */
 // Interests.insertMany([
 //     {
+//         title: "Part 1",
+//         image: "https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png",
+//         subtitle: "This is the subtitle",
+//         content: "We are mainly committed to the research of Biological Big Data and AI theory and methods, including bioinformatics, computational systems biology, network biology, dynamic data science methods, deep learning and applications, etc.",
+//         isShow: true,
+//     },
+//     {
 //         title: "Part 2",
-//         image: "https://www.pnas.org/pb-assets/images/Logos/header-logo/logo-1624644560537.svg",
+//         image: "https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png",
 //         subtitle: "This is the subtitle",
 //         content: "We are mainly committed to the research of Biological Big Data and AI theory and methods, including bioinformatics, computational systems biology, network biology, dynamic data science methods, deep learning and applications, etc.",
 //         isShow: true,
 //     },
 //     {
 //         title: "Part 3",
-//         image: "https://www.pnas.org/pb-assets/images/Logos/header-logo/logo-1624644560537.svg",
+//         image: "https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png",
 //         subtitle: "This is the subtitle",
 //         content: "We are mainly committed to the research of Biological Big Data and AI theory and methods, including bioinformatics, computational systems biology, network biology, dynamic data science methods, deep learning and applications, etc.",
 //         isShow: true,
 //     },
 //     {
-//         title: "Part 4",
-//         image: "https://www.pnas.org/pb-assets/images/Logos/header-logo/logo-1624644560537.svg",
+//         title: "Database",
+//         image: "https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png",
 //         subtitle: "This is the subtitle",
 //         content: "We are mainly committed to the research of Biological Big Data and AI theory and methods, including bioinformatics, computational systems biology, network biology, dynamic data science methods, deep learning and applications, etc.",
 //         isShow: true,

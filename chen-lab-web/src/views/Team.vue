@@ -11,7 +11,7 @@ const team = ref()
 const supports = ref()
 Axios.get('/api/team')
   .then((res) => {
-    console.log(res)
+    // console.log(res)
     if (res.status == 200) {
       team.value = res.data.data.team;
       supports.value = res.data.data.supports;
@@ -988,7 +988,7 @@ onMounted(() => {
     <el-col :span="20">
       <h1>{{ identify.title }}</h1>
       <el-row :gutter="70">
-        <el-col class="team-people-person" :span="screenWidth > 1600 ? 8 : (screenWidth > 800 ? 12 : 24)"
+        <el-col class="team-people-person" :span="screenWidth > 1600 ? 8 : (screenWidth > 1080 ? 12 : 24)"
           v-for="(person, index) in identify.people" :key="index">
           <!-- Image + Info -->
           <div class="team-people-person-box">
@@ -1187,11 +1187,18 @@ onMounted(() => {
   background-color: #d3dce6;
 }
 
-/* 判断屏幕宽度小于540px后使用百分比 */
+/* 判断屏幕宽度小于1200px后使用百分比 */
 @media screen and (max-width: 1200px) {
   .team-statistic-image {
     margin: 30px 0 0 0;
     /* border: 1px solid green; */
+  }
+}
+
+/* 判断屏幕宽度小于640px后使用百分比 */
+@media screen and (max-width: 640px) {
+  .team-people-person-box-info {
+    font-size: medium;
   }
 }
 </style>

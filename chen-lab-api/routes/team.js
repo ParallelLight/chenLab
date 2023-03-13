@@ -5,756 +5,6 @@ var router = express.Router();
 const Supports = require('../model/Supports');
 const { mongoose } = require('mongoose');
 
-/* Persons 增加记录 */
-// Persons.insertMany([
-//     {
-//         lab_id: 0,
-//         avatar: "https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png",
-//         name: "Luonan Chen",
-//         position: "Chief Professor",
-//         position_title: "Professors",
-//         website: "http://cemcs.cas.cn/sourcedb_cemcs_cas/zw/pi/202008/t20200823_5670080.html",
-//         commerce: [
-//             {
-//                 icon: ["fas", "envelope"],
-//                 account: "Email",
-//                 link: "mailto:lnchen@sibs.ac.cn"
-//             },
-//             {
-//                 icon: ["fab", "google"],
-//                 account: "Google Scholar",
-//                 link: "https://scholar.google.com/citations?user=Uoqv8rkAAAAJ&hl=zh-CN&oi=ao"
-//             },
-//             {
-//                 icon: ["fab", "github"],
-//                 account: "Github",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "twitter"],
-//                 account: "Twitter",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "linkedin"],
-//                 account: "Linkedin",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "facebook"],
-//                 account: "Facebook",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "zhihu"],
-//                 account: "Zhihu",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "weixin"],
-//                 account: "WeChat",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "qq"],
-//                 account: "QQ",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fas", "link"],
-//                 account: "CV",
-//                 link: ""
-//             },
-//         ],
-//         interests: ["生物信息学", "计算系统生物学", "生物大数据及人工智能"],
-//         biography: "陈洛南2009年10月起任中科院系统生物学重点实验室执行主任，研究员，博士生导师，研究组组长。",
-//         hometown: "XXXX",
-//         fact: "He always makes some bad jokes but everyone laughs too.",
-//         isShow: true
-//     },
-//     {
-//         lab_id: 1,
-//         avatar: "https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png",
-//         name: "Luonan Chen",
-//         position: "Chief Professor",
-//         position_title: "Professors",
-//         website: "http://cemcs.cas.cn/sourcedb_cemcs_cas/zw/pi/202008/t20200823_5670080.html",
-//         commerce: [
-//             {
-//                 icon: ["fas", "envelope"],
-//                 account: "Email",
-//                 link: "mailto:lnchen@sibs.ac.cn"
-//             },
-//             {
-//                 icon: ["fab", "google"],
-//                 account: "Google Scholar",
-//                 link: "https://scholar.google.com/citations?user=Uoqv8rkAAAAJ&hl=zh-CN&oi=ao"
-//             }
-//         ],
-//         interests: ["生物信息学", "计算系统生物学", "生物大数据及人工智能"],
-//         biography: "陈洛南2009年10月起任中科院系统生物学重点实验室执行主任，研究员，博士生导师，研究组组长。",
-//         hometown: "XXXX",
-//         fact: "He always makes some bad jokes but everyone laughs too.",
-//         isShow: true
-//     },
-//     {
-//         lab_id: 2,
-//         avatar: "https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png",
-//         name: "Luonan Chen",
-//         position: "Chief Professor",
-//         position_title: "Postdocs",
-//         website: "http://cemcs.cas.cn/sourcedb_cemcs_cas/zw/pi/202008/t20200823_5670080.html",
-//         commerce: [
-//             {
-//                 icon: ["fas", "envelope"],
-//                 account: "Email",
-//                 link: "mailto:lnchen@sibs.ac.cn"
-//             },
-//             {
-//                 icon: ["fab", "google"],
-//                 account: "Google Scholar",
-//                 link: "https://scholar.google.com/citations?user=Uoqv8rkAAAAJ&hl=zh-CN&oi=ao"
-//             },
-//             {
-//                 icon: ["fab", "github"],
-//                 account: "Github",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "twitter"],
-//                 account: "Twitter",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "linkedin"],
-//                 account: "Linkedin",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "facebook"],
-//                 account: "Facebook",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "zhihu"],
-//                 account: "Zhihu",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "weixin"],
-//                 account: "WeChat",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "qq"],
-//                 account: "QQ",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fas", "link"],
-//                 account: "CV",
-//                 link: ""
-//             },
-//         ],
-//         interests: ["生物信息学", "计算系统生物学", "生物大数据及人工智能"],
-//         biography: "陈洛南2009年10月起任中科院系统生物学重点实验室执行主任，研究员，博士生导师，研究组组长。",
-//         hometown: "XXXX",
-//         fact: "He always makes some bad jokes but everyone laughs too.",
-//         isShow: true
-//     },
-//     {
-//         lab_id: 3,
-//         avatar: "https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png",
-//         name: "Luonan Chen",
-//         position: "Chief Professor",
-//         position_title: "Visitors",
-//         website: "http://cemcs.cas.cn/sourcedb_cemcs_cas/zw/pi/202008/t20200823_5670080.html",
-//         commerce: [
-//             {
-//                 icon: ["fas", "envelope"],
-//                 account: "Email",
-//                 link: "mailto:lnchen@sibs.ac.cn"
-//             },
-//             {
-//                 icon: ["fab", "google"],
-//                 account: "Google Scholar",
-//                 link: "https://scholar.google.com/citations?user=Uoqv8rkAAAAJ&hl=zh-CN&oi=ao"
-//             },
-//             {
-//                 icon: ["fab", "github"],
-//                 account: "Github",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "twitter"],
-//                 account: "Twitter",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "linkedin"],
-//                 account: "Linkedin",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "facebook"],
-//                 account: "Facebook",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "zhihu"],
-//                 account: "Zhihu",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "weixin"],
-//                 account: "WeChat",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "qq"],
-//                 account: "QQ",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fas", "link"],
-//                 account: "CV",
-//                 link: ""
-//             },
-//         ],
-//         interests: ["生物信息学", "计算系统生物学", "生物大数据及人工智能"],
-//         biography: "陈洛南2009年10月起任中科院系统生物学重点实验室执行主任，研究员，博士生导师，研究组组长。",
-//         hometown: "XXXX",
-//         fact: "He always makes some bad jokes but everyone laughs too.",
-//         isShow: true
-//     },
-//     {
-//         lab_id: 4,
-//         avatar: "https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png",
-//         name: "Luonan Chen",
-//         position: "Chief Professor",
-//         position_title: "Current Students",
-//         website: "http://cemcs.cas.cn/sourcedb_cemcs_cas/zw/pi/202008/t20200823_5670080.html",
-//         commerce: [
-//             {
-//                 icon: ["fas", "envelope"],
-//                 account: "Email",
-//                 link: "mailto:lnchen@sibs.ac.cn"
-//             },
-//             {
-//                 icon: ["fab", "google"],
-//                 account: "Google Scholar",
-//                 link: "https://scholar.google.com/citations?user=Uoqv8rkAAAAJ&hl=zh-CN&oi=ao"
-//             },
-//             {
-//                 icon: ["fab", "github"],
-//                 account: "Github",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "twitter"],
-//                 account: "Twitter",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "linkedin"],
-//                 account: "Linkedin",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "facebook"],
-//                 account: "Facebook",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "zhihu"],
-//                 account: "Zhihu",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "weixin"],
-//                 account: "WeChat",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "qq"],
-//                 account: "QQ",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fas", "link"],
-//                 account: "CV",
-//                 link: ""
-//             },
-//         ],
-//         interests: ["生物信息学", "计算系统生物学", "生物大数据及人工智能"],
-//         biography: "陈洛南2009年10月起任中科院系统生物学重点实验室执行主任，研究员，博士生导师，研究组组长。",
-//         hometown: "XXXX",
-//         fact: "He always makes some bad jokes but everyone laughs too.",
-//         isShow: true
-//     },
-//     {
-//         lab_id: 5,
-//         avatar: "https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png",
-//         name: "Luonan Chen",
-//         position: "Chief Professor",
-//         position_title: "Current Students",
-//         website: "http://cemcs.cas.cn/sourcedb_cemcs_cas/zw/pi/202008/t20200823_5670080.html",
-//         commerce: [
-//             {
-//                 icon: ["fas", "envelope"],
-//                 account: "Email",
-//                 link: "mailto:lnchen@sibs.ac.cn"
-//             },
-//             {
-//                 icon: ["fab", "google"],
-//                 account: "Google Scholar",
-//                 link: "https://scholar.google.com/citations?user=Uoqv8rkAAAAJ&hl=zh-CN&oi=ao"
-//             },
-//             {
-//                 icon: ["fab", "github"],
-//                 account: "Github",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "twitter"],
-//                 account: "Twitter",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "linkedin"],
-//                 account: "Linkedin",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "facebook"],
-//                 account: "Facebook",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "zhihu"],
-//                 account: "Zhihu",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "weixin"],
-//                 account: "WeChat",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "qq"],
-//                 account: "QQ",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fas", "link"],
-//                 account: "CV",
-//                 link: ""
-//             },
-//         ],
-//         interests: ["生物信息学", "计算系统生物学", "生物大数据及人工智能"],
-//         biography: "陈洛南2009年10月起任中科院系统生物学重点实验室执行主任，研究员，博士生导师，研究组组长。",
-//         hometown: "XXXX",
-//         fact: "He always makes some bad jokes but everyone laughs too.",
-//         isShow: true
-//     },
-//     {
-//         lab_id: 6,
-//         avatar: "https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png",
-//         name: "Luonan Chen",
-//         position: "Chief Professor",
-//         position_title: "Current Students",
-//         website: "http://cemcs.cas.cn/sourcedb_cemcs_cas/zw/pi/202008/t20200823_5670080.html",
-//         commerce: [
-//             {
-//                 icon: ["fas", "envelope"],
-//                 account: "Email",
-//                 link: "mailto:lnchen@sibs.ac.cn"
-//             },
-//             {
-//                 icon: ["fab", "google"],
-//                 account: "Google Scholar",
-//                 link: "https://scholar.google.com/citations?user=Uoqv8rkAAAAJ&hl=zh-CN&oi=ao"
-//             },
-//             {
-//                 icon: ["fab", "github"],
-//                 account: "Github",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "twitter"],
-//                 account: "Twitter",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "linkedin"],
-//                 account: "Linkedin",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "facebook"],
-//                 account: "Facebook",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "zhihu"],
-//                 account: "Zhihu",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "weixin"],
-//                 account: "WeChat",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "qq"],
-//                 account: "QQ",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fas", "link"],
-//                 account: "CV",
-//                 link: ""
-//             },
-//         ],
-//         interests: ["生物信息学", "计算系统生物学", "生物大数据及人工智能"],
-//         biography: "陈洛南2009年10月起任中科院系统生物学重点实验室执行主任，研究员，博士生导师，研究组组长。",
-//         hometown: "XXXX",
-//         fact: "He always makes some bad jokes but everyone laughs too.",
-//         isShow: true
-//     },
-//     {
-//         lab_id: 7,
-//         avatar: "https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png",
-//         name: "Luonan Chen",
-//         position: "Chief Professor",
-//         position_title: "Current Students",
-//         website: "http://cemcs.cas.cn/sourcedb_cemcs_cas/zw/pi/202008/t20200823_5670080.html",
-//         commerce: [
-//             {
-//                 icon: ["fas", "envelope"],
-//                 account: "Email",
-//                 link: "mailto:lnchen@sibs.ac.cn"
-//             },
-//             {
-//                 icon: ["fab", "google"],
-//                 account: "Google Scholar",
-//                 link: "https://scholar.google.com/citations?user=Uoqv8rkAAAAJ&hl=zh-CN&oi=ao"
-//             },
-//             {
-//                 icon: ["fab", "github"],
-//                 account: "Github",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "twitter"],
-//                 account: "Twitter",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "linkedin"],
-//                 account: "Linkedin",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "facebook"],
-//                 account: "Facebook",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "zhihu"],
-//                 account: "Zhihu",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "weixin"],
-//                 account: "WeChat",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "qq"],
-//                 account: "QQ",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fas", "link"],
-//                 account: "CV",
-//                 link: ""
-//             },
-//         ],
-//         interests: ["生物信息学", "计算系统生物学", "生物大数据及人工智能"],
-//         biography: "陈洛南2009年10月起任中科院系统生物学重点实验室执行主任，研究员，博士生导师，研究组组长。",
-//         hometown: "XXXX",
-//         fact: "He always makes some bad jokes but everyone laughs too.",
-//         isShow: true
-//     },
-//     {
-//         lab_id: 8,
-//         avatar: "https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png",
-//         name: "Luonan Chen",
-//         position: "Chief Professor",
-//         position_title: "Current Students",
-//         website: "http://cemcs.cas.cn/sourcedb_cemcs_cas/zw/pi/202008/t20200823_5670080.html",
-//         commerce: [
-//             {
-//                 icon: ["fas", "envelope"],
-//                 account: "Email",
-//                 link: "mailto:lnchen@sibs.ac.cn"
-//             },
-//             {
-//                 icon: ["fab", "google"],
-//                 account: "Google Scholar",
-//                 link: "https://scholar.google.com/citations?user=Uoqv8rkAAAAJ&hl=zh-CN&oi=ao"
-//             },
-//             {
-//                 icon: ["fab", "github"],
-//                 account: "Github",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "twitter"],
-//                 account: "Twitter",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "linkedin"],
-//                 account: "Linkedin",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "facebook"],
-//                 account: "Facebook",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "zhihu"],
-//                 account: "Zhihu",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "weixin"],
-//                 account: "WeChat",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "qq"],
-//                 account: "QQ",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fas", "link"],
-//                 account: "CV",
-//                 link: ""
-//             },
-//         ],
-//         interests: ["生物信息学", "计算系统生物学", "生物大数据及人工智能"],
-//         biography: "陈洛南2009年10月起任中科院系统生物学重点实验室执行主任，研究员，博士生导师，研究组组长。",
-//         hometown: "XXXX",
-//         fact: "He always makes some bad jokes but everyone laughs too.",
-//         isShow: true
-//     },
-//     {
-//         lab_id: 9,
-//         avatar: "https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png",
-//         name: "Luonan Chen",
-//         position: "Chief Professor",
-//         position_title: "Staff",
-//         website: "http://cemcs.cas.cn/sourcedb_cemcs_cas/zw/pi/202008/t20200823_5670080.html",
-//         commerce: [
-//             {
-//                 icon: ["fas", "envelope"],
-//                 account: "Email",
-//                 link: "mailto:lnchen@sibs.ac.cn"
-//             },
-//             {
-//                 icon: ["fab", "google"],
-//                 account: "Google Scholar",
-//                 link: "https://scholar.google.com/citations?user=Uoqv8rkAAAAJ&hl=zh-CN&oi=ao"
-//             },
-//             {
-//                 icon: ["fab", "github"],
-//                 account: "Github",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "twitter"],
-//                 account: "Twitter",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "linkedin"],
-//                 account: "Linkedin",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "facebook"],
-//                 account: "Facebook",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "zhihu"],
-//                 account: "Zhihu",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "weixin"],
-//                 account: "WeChat",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "qq"],
-//                 account: "QQ",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fas", "link"],
-//                 account: "CV",
-//                 link: ""
-//             },
-//         ],
-//         interests: ["生物信息学", "计算系统生物学", "生物大数据及人工智能"],
-//         biography: "陈洛南2009年10月起任中科院系统生物学重点实验室执行主任，研究员，博士生导师，研究组组长。",
-//         hometown: "XXXX",
-//         fact: "He always makes some bad jokes but everyone laughs too.",
-//         isShow: true
-//     },
-//     {
-//         lab_id: 10,
-//         avatar: "https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png",
-//         name: "Luonan Chen",
-//         position: "Chief Professor",
-//         position_title: "Alumnis",
-//         website: "http://cemcs.cas.cn/sourcedb_cemcs_cas/zw/pi/202008/t20200823_5670080.html",
-//         commerce: [
-//             {
-//                 icon: ["fas", "envelope"],
-//                 account: "Email",
-//                 link: "mailto:lnchen@sibs.ac.cn"
-//             },
-//             {
-//                 icon: ["fab", "google"],
-//                 account: "Google Scholar",
-//                 link: "https://scholar.google.com/citations?user=Uoqv8rkAAAAJ&hl=zh-CN&oi=ao"
-//             },
-//             {
-//                 icon: ["fab", "github"],
-//                 account: "Github",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "twitter"],
-//                 account: "Twitter",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "linkedin"],
-//                 account: "Linkedin",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "facebook"],
-//                 account: "Facebook",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "zhihu"],
-//                 account: "Zhihu",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "weixin"],
-//                 account: "WeChat",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "qq"],
-//                 account: "QQ",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fas", "link"],
-//                 account: "CV",
-//                 link: ""
-//             },
-//         ],
-//         interests: ["生物信息学", "计算系统生物学", "生物大数据及人工智能"],
-//         biography: "陈洛南2009年10月起任中科院系统生物学重点实验室执行主任，研究员，博士生导师，研究组组长。",
-//         hometown: "XXXX",
-//         fact: "He always makes some bad jokes but everyone laughs too.",
-//         isShow: true
-//     },
-//     {
-//         lab_id: 11,
-//         avatar: "https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png",
-//         name: "Luonan Chen",
-//         position: "Chief Professor",
-//         position_title: "Alumnis",
-//         website: "http://cemcs.cas.cn/sourcedb_cemcs_cas/zw/pi/202008/t20200823_5670080.html",
-//         commerce: [
-//             {
-//                 icon: ["fas", "envelope"],
-//                 account: "Email",
-//                 link: "mailto:lnchen@sibs.ac.cn"
-//             },
-//             {
-//                 icon: ["fab", "google"],
-//                 account: "Google Scholar",
-//                 link: "https://scholar.google.com/citations?user=Uoqv8rkAAAAJ&hl=zh-CN&oi=ao"
-//             },
-//             {
-//                 icon: ["fab", "github"],
-//                 account: "Github",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "twitter"],
-//                 account: "Twitter",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "linkedin"],
-//                 account: "Linkedin",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "facebook"],
-//                 account: "Facebook",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "zhihu"],
-//                 account: "Zhihu",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "weixin"],
-//                 account: "WeChat",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fab", "qq"],
-//                 account: "QQ",
-//                 link: ""
-//             },
-//             {
-//                 icon: ["fas", "link"],
-//                 account: "CV",
-//                 link: ""
-//             },
-//         ],
-//         interests: ["生物信息学", "计算系统生物学", "生物大数据及人工智能"],
-//         biography: "陈洛南2009年10月起任中科院系统生物学重点实验室执行主任，研究员，博士生导师，研究组组长。",
-//         hometown: "XXXX",
-//         fact: "He always makes some bad jokes but everyone laughs too.",
-//         isShow: true
-//     }
-// ], function (err, res) {
-//     if (err) {
-//         console.log(err);
-//     }
-//     console.log(res);
-//     console.log("Persons 增加记录");
-// });
-
 /* Positions 增加记录 */
 // Positions.insertMany([
 //     {
@@ -799,6 +49,81 @@ const { mongoose } = require('mongoose');
 //     }
 //     console.log(res);
 //     console.log("Positions 增加记录");
+// });
+
+/* Persons 增加记录 */
+// Persons.insertMany([
+//     {
+//         lab_id: 2,  // 实验室ID，必须是Number格式，老师：工号；学生：入学年份+学号后五位
+//         avatar: "https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png",   // 头像
+//         name: "Name",   // 姓名
+//         position: "Position",   // 职位，可具体描述
+//         position_title: "Professors",   // 与Positions集合的关联项-大类 Professors Postdocs Visitors ‘Current Students’ Staff Alumnis
+//         website: "/people/name",  // 个人博客链接 nginx 重定向 个人博客链接 https
+//         commerce: [ // 社交账号（有的话上传）
+//             {
+//                 icon: ["fas", "envelope"],
+//                 account: "Email",
+//                 link: "mailto:lnchen@sibs.ac.cn"    // 邮箱 mailto:
+//             },
+//             {
+//                 icon: ["fab", "google"],
+//                 account: "Google Scholar",
+//                 link: "https://scholar.google.com/citations?user=Uoqv8rkAAAAJ&hl=zh-CN&oi=ao"   // 谷歌学术
+//             },
+//             {
+//                 icon: ["fab", "github"],
+//                 account: "Github",
+//                 link: ""    // GitHub
+//             },
+//             {
+//                 icon: ["fab", "twitter"],
+//                 account: "Twitter",
+//                 link: ""    // Twitter
+//             },
+//             {
+//                 icon: ["fab", "linkedin"],
+//                 account: "Linkedin",
+//                 link: ""    // Linkedin
+//             },
+//             {
+//                 icon: ["fab", "facebook"],
+//                 account: "Facebook",
+//                 link: ""    // Facebook
+//             },
+//             {
+//                 icon: ["fab", "zhihu"],
+//                 account: "Zhihu",
+//                 link: ""    // Zhihu
+//             },
+//             {
+//                 icon: ["fab", "weixin"],
+//                 account: "WeChat",
+//                 link: ""    // WeChat
+//             },
+//             {
+//                 icon: ["fab", "qq"],
+//                 account: "QQ",
+//                 link: ""    // QQ
+//             },
+//             {
+//                 icon: ["fas", "link"],
+//                 account: "CV",
+//                 link: ""    // CV简历链接
+//             },
+//         ],
+//         interests: ["Bioinformatics", "interest2", "interest2"],    // 研究方向
+//         biography: "Your biography Your biography Your biography Your biography Your biography Your biography Your biography Your biography Your biography",  // 个人简介
+//         hometown: "XXX, XXX, XXX",   // 家乡
+//         fact: "your fun fact your fun fact your fun fact your fun fact your fun fact your fun fact your fun fact your fun fact your fun fact ",    // Fun Fact
+//         isShow: true
+//     }
+// ], function (err, res) {
+//     if (err) {
+//         console.log(err);
+//     }
+//     console.log(res);
+//     console.log("Persons 增加记录");
 // });
 
 /* Supports 增加记录 */

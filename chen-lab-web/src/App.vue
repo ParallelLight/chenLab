@@ -8,7 +8,7 @@ import Backtop from "./components/Backtop.vue";
 <template>
   <div class="container">
     <!-- Header -->
-    <el-affix>
+    <el-affix style="width: 100%">
       <Header></Header>
     </el-affix>
     <!-- Main & Footer -->

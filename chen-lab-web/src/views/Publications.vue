@@ -7,7 +7,7 @@ const isDark = ref(useDark());
 const publications = ref()
 Axios.get('/api/publications')
   .then((res) => {
-    console.log(res)
+    // console.log(res)
     if (res.status == 200) {
       publications.value = res.data.data.publications
     }

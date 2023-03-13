@@ -7,7 +7,7 @@ const isDark = ref(useDark());
 const resources = ref()
 Axios.get('/api/resources')
   .then((res) => {
-    console.log(res)
+    // console.log(res)
     if (res.status == 200) {
       resources.value = res.data.data.resources
     }
