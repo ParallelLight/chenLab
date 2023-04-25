@@ -1,0 +1,53 @@
+[{
+  "_id": {
+    "$oid": "64088d24119e7b000dbec867"
+  },
+  "u_id": 0,
+  "unit": "CAS",
+  "logo": "https://www.zkszl.net/zhongke/userfiles/1/images/zk-logo.png",
+  "link": "https://www.cas.cn/",
+  "isShow": true,
+  "updated": {
+    "$date": "2023-03-08T13:27:00.622Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64088dba98e9bc52ca0c9cb8"
+  },
+  "u_id": 1,
+  "unit": "UCAS",
+  "logo": "https://www.ucas.ac.cn/newStyle/images/lougou.png",
+  "link": "https://www.ucas.ac.cn/",
+  "isShow": true,
+  "updated": {
+    "$date": "2023-03-08T13:29:30.867Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64088dba98e9bc52ca0c9cba"
+  },
+  "u_id": 3,
+  "unit": "HIAS",
+  "logo": "http://hias.ucas.ac.cn/images/t_logo.png",
+  "link": "http://hias.ucas.ac.cn/",
+  "isShow": true,
+  "updated": {
+    "$date": "2023-03-08T13:29:30.868Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64088dba98e9bc52ca0c9cb9"
+  },
+  "u_id": 2,
+  "unit": "CEMCS",
+  "logo": "http://cemcs.cas.cn//images/shxbs_logo.png",
+  "link": "http://cemcs.cas.cn/",
+  "isShow": true,
+  "updated": {
+    "$date": "2023-03-08T13:29:30.868Z"
+  },
+  "__v": 0
+}]

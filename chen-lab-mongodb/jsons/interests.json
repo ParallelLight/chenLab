@@ -1,0 +1,53 @@
+[{
+  "_id": {
+    "$oid": "640df512164441be6be0195b"
+  },
+  "title": "Part 1",
+  "image": "https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png",
+  "subtitle": "This is the subtitle",
+  "content": "We are mainly committed to the research of Biological Big Data and AI theory and methods, including bioinformatics, computational systems biology, network biology, dynamic data science methods, deep learning and applications, etc.",
+  "isShow": true,
+  "updated": {
+    "$date": "2023-03-12T15:51:46.965Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640df512164441be6be0195c"
+  },
+  "title": "Part 2",
+  "image": "https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png",
+  "subtitle": "This is the subtitle",
+  "content": "We are mainly committed to the research of Biological Big Data and AI theory and methods, including bioinformatics, computational systems biology, network biology, dynamic data science methods, deep learning and applications, etc.",
+  "isShow": true,
+  "updated": {
+    "$date": "2023-03-12T15:51:46.966Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640df512164441be6be0195e"
+  },
+  "title": "Database",
+  "image": "https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png",
+  "subtitle": "This is the subtitle",
+  "content": "We are mainly committed to the research of Biological Big Data and AI theory and methods, including bioinformatics, computational systems biology, network biology, dynamic data science methods, deep learning and applications, etc.",
+  "isShow": true,
+  "updated": {
+    "$date": "2023-03-12T15:51:46.966Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640df512164441be6be0195d"
+  },
+  "title": "Part 3",
+  "image": "https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png",
+  "subtitle": "This is the subtitle",
+  "content": "We are mainly committed to the research of Biological Big Data and AI theory and methods, including bioinformatics, computational systems biology, network biology, dynamic data science methods, deep learning and applications, etc.",
+  "isShow": true,
+  "updated": {
+    "$date": "2023-03-12T15:51:46.966Z"
+  },
+  "__v": 0
+}]

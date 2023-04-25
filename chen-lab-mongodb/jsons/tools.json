@@ -1,0 +1,49 @@
+[{
+  "_id": {
+    "$oid": "640733324a79e6eea6af3f9f"
+  },
+  "title": "Nature",
+  "image": "https://media.springernature.com/full/nature-cms/uploads/product/nature/header-86f1267ea01eccd46b530284be10585e.svg",
+  "link": "https://www.nature.com/siteindex",
+  "isShow": true,
+  "updated": {
+    "$date": "2023-03-07T12:50:58.569Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640735771dbc8e45c47689f3"
+  },
+  "title": "Science",
+  "image": "https://www.science.org/pb-assets/images/styleguide/logo-1672180580750.svg",
+  "link": "https://www.science.org/journals",
+  "isShow": true,
+  "updated": {
+    "$date": "2023-03-07T13:00:39.135Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6407381afdfe8e4d12412126"
+  },
+  "title": "Cell",
+  "image": "https://www.cell.com/pb-assets/ux3/logos/cell/CellMetabolism_white-1532516638307.svg",
+  "link": "https://www.cell.com/",
+  "isShow": true,
+  "updated": {
+    "$date": "2023-03-07T13:11:54.945Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6407381afdfe8e4d12412127"
+  },
+  "title": "PNAS",
+  "image": "https://www.pnas.org/pb-assets/images/Logos/header-logo/logo-1624644560537.svg",
+  "link": "https://www.pnas.org/",
+  "isShow": true,
+  "updated": {
+    "$date": "2023-03-07T13:11:54.946Z"
+  },
+  "__v": 0
+}]

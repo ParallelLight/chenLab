@@ -23,7 +23,8 @@
 - 2023.03.06：Vue3 + Element Plus 前端开发完成
 
 ## Development stack
-- Vite + Vue3 + Element Plus + TypeScript
+- Vite + Vue3 + TypeScript
+- Element Plus + Font Awesome
 - Express + Node.js + JavaScript
 - MongoDB + Mongoose
 

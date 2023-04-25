@@ -1,0 +1,457 @@
+[{
+  "_id": {
+    "$oid": "640df512164441be6be0195e"
+  },
+  "title": "Database",
+  "image": "https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png",
+  "subtitle": "This is the subtitle",
+  "content": "We are mainly committed to the research of Biological Big Data and AI theory and methods, including bioinformatics, computational systems biology, network biology, dynamic data science methods, deep learning and applications, etc.",
+  "isShow": true,
+  "updated": {
+    "$date": "2023-03-12T15:51:46.966Z"
+  },
+  "__v": 0,
+  "papers": [
+    {
+      "_id": {
+        "$oid": "6407403fd1b9f4cc674fd110"
+      },
+      "doi": "10.1186/s12864-023-09135-5",
+      "year": 2023,
+      "date": "2023.01.27",
+      "journal": "BMC genomics, 24(1), 47. https://doi.org/10.1186/s12864-023-09135-5",
+      "title": "TeCD: The eccDNA Collection Database for extrachromosomal circular DNA",
+      "authors": [
+        {
+          "name": "Jing Guo✝",
+          "link": "",
+          "_id": {
+            "$oid": "6407403fd1b9f4cc674fd111"
+          }
+        },
+        {
+          "name": "Ze Zhang✝",
+          "link": "parallellight.com",
+          "_id": {
+            "$oid": "6407403fd1b9f4cc674fd112"
+          }
+        },
+        {
+          "name": "Qingcui Li",
+          "link": "",
+          "_id": {
+            "$oid": "6407403fd1b9f4cc674fd113"
+          }
+        },
+        {
+          "name": "Xiao Chang",
+          "link": "",
+          "_id": {
+            "$oid": "6407403fd1b9f4cc674fd114"
+          }
+        },
+        {
+          "name": "Xiaoping Liu",
+          "link": "",
+          "_id": {
+            "$oid": "6407403fd1b9f4cc674fd115"
+          }
+        }
+      ],
+      "links": {
+        "DOI: 10.1186/s12864-023-09135-5": "https://doi.org/10.1186/s12864-023-09135-5",
+        "PMID: 36707765": "https://pubmed.ncbi.nlm.nih.gov/36707765/",
+        "Google Scholar": "https://scholar.google.com/scholar?hl=zh-CN&as_sdt=0%2C5&q=TeCD%3A+The+eccDNA+Collection+Database+for+extrachromosomal+circular+DNA&btnG="
+      },
+      "abstract": "Background: Extrachromosomal circular DNA (eccDNA) is a kind of DNA that widely exists in eukaryotic cells. Studies in recent years have shown that eccDNA is often enriched during tumors and aging, and participates in the development of cell physiological activities in a special way, so people have paid more and more attention to the eccDNA, and it has also become a critical new topic in modern biological research. Description: We built a database to collect eccDNA, including animals, plants and fungi, and provide researchers with an eccDNA retrieval platform. The collected eccDNAs were processed in a uniform format and classified according to the species to which it belongs and the chromosome of the source. Each eccDNA record contained sequence length, start and end sites on the corresponding chromosome, order of the bases, genomic elements such as genes and transposons, and other information in the respective sequencing experiment. All the data were stored into the TeCD (The eccDNA Collection Database) and the BLAST (Basic Local Alignment Search Tool) sequence alignment function was also added into the database for analyzing the potential eccDNA sequences. Conclusion: We built TeCD, a platform for users to search and obtain eccDNA data, and analyzed the possible potential functions of eccDNA. These findings may provide a basis and direction for researchers to further explore the biological significance of eccDNA in the future.",
+      "keywords": [
+        "Circular DNA",
+        "Extrachromosomal DNA",
+        "eccDNA"
+      ],
+      "figure": "https://media.springernature.com/full/springer-static/image/art%3A10.1186%2Fs12864-023-09135-5/MediaObjects/12864_2023_9135_Fig1_HTML.png?as=webp",
+      "citation": "Guo, J., Zhang, Z., Li, Q., Chang, X., & Liu, X. (2023). TeCD: The eccDNA Collection Database for extrachromosomal circular DNA. BMC genomics, 24(1), 47. https://doi.org/10.1186/s12864-023-09135-5",
+      "archive": "Database",
+      "isShow": true,
+      "updated": {
+        "$date": "2023-03-07T13:46:39.766Z"
+      },
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "6407403fd1b9f4cc674fd104"
+      },
+      "doi": "10.1186/s12864-023-09135-5",
+      "year": 2022,
+      "date": "2022.02.02",
+      "journal": "BMC genomics, 24(1), 47. https://doi.org/10.1186/s12864-023-09135-5",
+      "title": "TeCD: The eccDNA Collection Database for extrachromosomal circular DNA",
+      "authors": [
+        {
+          "name": "Jing Guo✝",
+          "link": "",
+          "_id": {
+            "$oid": "6407403fd1b9f4cc674fd105"
+          }
+        },
+        {
+          "name": "Ze Zhang✝",
+          "link": "parallellight.com",
+          "_id": {
+            "$oid": "6407403fd1b9f4cc674fd106"
+          }
+        },
+        {
+          "name": "Qingcui Li",
+          "link": "",
+          "_id": {
+            "$oid": "6407403fd1b9f4cc674fd107"
+          }
+        },
+        {
+          "name": "Xiao Chang",
+          "link": "",
+          "_id": {
+            "$oid": "6407403fd1b9f4cc674fd108"
+          }
+        },
+        {
+          "name": "Xiaoping Liu",
+          "link": "",
+          "_id": {
+            "$oid": "6407403fd1b9f4cc674fd109"
+          }
+        }
+      ],
+      "links": {
+        "DOI: 10.1186/s12864-023-09135-5": "https://doi.org/10.1186/s12864-023-09135-5",
+        "PMID: 36707765": "https://pubmed.ncbi.nlm.nih.gov/36707765/",
+        "Google Scholar": "https://scholar.google.com/scholar?hl=zh-CN&as_sdt=0%2C5&q=TeCD%3A+The+eccDNA+Collection+Database+for+extrachromosomal+circular+DNA&btnG="
+      },
+      "abstract": "Background: Extrachromosomal circular DNA (eccDNA) is a kind of DNA that widely exists in eukaryotic cells. Studies in recent years have shown that eccDNA is often enriched during tumors and aging, and participates in the development of cell physiological activities in a special way, so people have paid more and more attention to the eccDNA, and it has also become a critical new topic in modern biological research. Description: We built a database to collect eccDNA, including animals, plants and fungi, and provide researchers with an eccDNA retrieval platform. The collected eccDNAs were processed in a uniform format and classified according to the species to which it belongs and the chromosome of the source. Each eccDNA record contained sequence length, start and end sites on the corresponding chromosome, order of the bases, genomic elements such as genes and transposons, and other information in the respective sequencing experiment. All the data were stored into the TeCD (The eccDNA Collection Database) and the BLAST (Basic Local Alignment Search Tool) sequence alignment function was also added into the database for analyzing the potential eccDNA sequences. Conclusion: We built TeCD, a platform for users to search and obtain eccDNA data, and analyzed the possible potential functions of eccDNA. These findings may provide a basis and direction for researchers to further explore the biological significance of eccDNA in the future.",
+      "keywords": [
+        "Circular DNA",
+        "Extrachromosomal DNA",
+        "eccDNA"
+      ],
+      "figure": "https://media.springernature.com/full/springer-static/image/art%3A10.1186%2Fs12864-023-09135-5/MediaObjects/12864_2023_9135_Fig1_HTML.png?as=webp",
+      "citation": "Guo, J., Zhang, Z., Li, Q., Chang, X., & Liu, X. (2023). TeCD: The eccDNA Collection Database for extrachromosomal circular DNA. BMC genomics, 24(1), 47. https://doi.org/10.1186/s12864-023-09135-5",
+      "archive": "Database",
+      "isShow": true,
+      "updated": {
+        "$date": "2023-03-07T13:46:39.765Z"
+      },
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "64073f8ad34be87acee06a50"
+      },
+      "doi": "10.1186/s12864-023-09135-5",
+      "year": 2021,
+      "date": "2021.01.01",
+      "journal": "BMC genomics, 24(1), 47. https://doi.org/10.1186/s12864-023-09135-5",
+      "title": "TeCD: The eccDNA Collection Database for extrachromosomal circular DNA",
+      "authors": [
+        {
+          "name": "Jing Guo✝",
+          "link": "",
+          "_id": {
+            "$oid": "64073f8ad34be87acee06a51"
+          }
+        },
+        {
+          "name": "Ze Zhang✝",
+          "link": "parallellight.com",
+          "_id": {
+            "$oid": "64073f8ad34be87acee06a52"
+          }
+        },
+        {
+          "name": "Qingcui Li",
+          "link": "",
+          "_id": {
+            "$oid": "64073f8ad34be87acee06a53"
+          }
+        },
+        {
+          "name": "Xiao Chang",
+          "link": "",
+          "_id": {
+            "$oid": "64073f8ad34be87acee06a54"
+          }
+        },
+        {
+          "name": "Xiaoping Liu",
+          "link": "",
+          "_id": {
+            "$oid": "64073f8ad34be87acee06a55"
+          }
+        }
+      ],
+      "links": {
+        "DOI: 10.1186/s12864-023-09135-5": "https://doi.org/10.1186/s12864-023-09135-5",
+        "PMID: 36707765": "https://pubmed.ncbi.nlm.nih.gov/36707765/",
+        "Google Scholar": "https://scholar.google.com/scholar?hl=zh-CN&as_sdt=0%2C5&q=TeCD%3A+The+eccDNA+Collection+Database+for+extrachromosomal+circular+DNA&btnG="
+      },
+      "abstract": "Background: Extrachromosomal circular DNA (eccDNA) is a kind of DNA that widely exists in eukaryotic cells. Studies in recent years have shown that eccDNA is often enriched during tumors and aging, and participates in the development of cell physiological activities in a special way, so people have paid more and more attention to the eccDNA, and it has also become a critical new topic in modern biological research. Description: We built a database to collect eccDNA, including animals, plants and fungi, and provide researchers with an eccDNA retrieval platform. The collected eccDNAs were processed in a uniform format and classified according to the species to which it belongs and the chromosome of the source. Each eccDNA record contained sequence length, start and end sites on the corresponding chromosome, order of the bases, genomic elements such as genes and transposons, and other information in the respective sequencing experiment. All the data were stored into the TeCD (The eccDNA Collection Database) and the BLAST (Basic Local Alignment Search Tool) sequence alignment function was also added into the database for analyzing the potential eccDNA sequences. Conclusion: We built TeCD, a platform for users to search and obtain eccDNA data, and analyzed the possible potential functions of eccDNA. These findings may provide a basis and direction for researchers to further explore the biological significance of eccDNA in the future.",
+      "keywords": [
+        "Circular DNA",
+        "Extrachromosomal DNA",
+        "eccDNA"
+      ],
+      "figure": "https://media.springernature.com/full/springer-static/image/art%3A10.1186%2Fs12864-023-09135-5/MediaObjects/12864_2023_9135_Fig1_HTML.png?as=webp",
+      "citation": "Guo, J., Zhang, Z., Li, Q., Chang, X., & Liu, X. (2023). TeCD: The eccDNA Collection Database for extrachromosomal circular DNA. BMC genomics, 24(1), 47. https://doi.org/10.1186/s12864-023-09135-5",
+      "archive": "Database",
+      "isShow": true,
+      "updated": {
+        "$date": "2023-03-07T13:43:38.983Z"
+      },
+      "__v": 0
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "640df512164441be6be0195b"
+  },
+  "title": "Part 1",
+  "image": "https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png",
+  "subtitle": "This is the subtitle",
+  "content": "We are mainly committed to the research of Biological Big Data and AI theory and methods, including bioinformatics, computational systems biology, network biology, dynamic data science methods, deep learning and applications, etc.",
+  "isShow": true,
+  "updated": {
+    "$date": "2023-03-12T15:51:46.965Z"
+  },
+  "__v": 0,
+  "papers": [
+    {
+      "_id": {
+        "$oid": "640858a3836f1e00662dc49e"
+      },
+      "doi": "10.1186/s12864-023-09135-5",
+      "year": 2023,
+      "date": "2022.03.03",
+      "journal": "BMC genomics, 24(1), 47. https://doi.org/10.1186/s12864-023-09135-5",
+      "title": "TeCD: The eccDNA Collection Database for extrachromosomal circular DNA",
+      "authors": [
+        {
+          "name": "Jing Guo✝",
+          "link": "",
+          "_id": {
+            "$oid": "640858a3836f1e00662dc49f"
+          }
+        },
+        {
+          "name": "Ze Zhang✝",
+          "link": "parallellight.com",
+          "_id": {
+            "$oid": "640858a3836f1e00662dc4a0"
+          }
+        },
+        {
+          "name": "Qingcui Li",
+          "link": "",
+          "_id": {
+            "$oid": "640858a3836f1e00662dc4a1"
+          }
+        },
+        {
+          "name": "Xiao Chang",
+          "link": "",
+          "_id": {
+            "$oid": "640858a3836f1e00662dc4a2"
+          }
+        },
+        {
+          "name": "Xiaoping Liu",
+          "link": "",
+          "_id": {
+            "$oid": "640858a3836f1e00662dc4a3"
+          }
+        }
+      ],
+      "links": {
+        "DOI: 10.1186/s12864-023-09135-5": "https://doi.org/10.1186/s12864-023-09135-5",
+        "PMID: 36707765": "https://pubmed.ncbi.nlm.nih.gov/36707765/",
+        "Google Scholar": "https://scholar.google.com/scholar?hl=zh-CN&as_sdt=0%2C5&q=TeCD%3A+The+eccDNA+Collection+Database+for+extrachromosomal+circular+DNA&btnG="
+      },
+      "abstract": "Background: Extrachromosomal circular DNA (eccDNA) is a kind of DNA that widely exists in eukaryotic cells. Studies in recent years have shown that eccDNA is often enriched during tumors and aging, and participates in the development of cell physiological activities in a special way, so people have paid more and more attention to the eccDNA, and it has also become a critical new topic in modern biological research. Description: We built a database to collect eccDNA, including animals, plants and fungi, and provide researchers with an eccDNA retrieval platform. The collected eccDNAs were processed in a uniform format and classified according to the species to which it belongs and the chromosome of the source. Each eccDNA record contained sequence length, start and end sites on the corresponding chromosome, order of the bases, genomic elements such as genes and transposons, and other information in the respective sequencing experiment. All the data were stored into the TeCD (The eccDNA Collection Database) and the BLAST (Basic Local Alignment Search Tool) sequence alignment function was also added into the database for analyzing the potential eccDNA sequences. Conclusion: We built TeCD, a platform for users to search and obtain eccDNA data, and analyzed the possible potential functions of eccDNA. These findings may provide a basis and direction for researchers to further explore the biological significance of eccDNA in the future.",
+      "keywords": [
+        "Circular DNA",
+        "Extrachromosomal DNA",
+        "eccDNA"
+      ],
+      "figure": "https://media.springernature.com/full/springer-static/image/art%3A10.1186%2Fs12864-023-09135-5/MediaObjects/12864_2023_9135_Fig1_HTML.png?as=webp",
+      "citation": "Guo, J., Zhang, Z., Li, Q., Chang, X., & Liu, X. (2023). TeCD: The eccDNA Collection Database for extrachromosomal circular DNA. BMC genomics, 24(1), 47. https://doi.org/10.1186/s12864-023-09135-5",
+      "archive": "Part 1",
+      "isShow": true,
+      "updated": {
+        "$date": "2023-03-08T09:42:59.888Z"
+      },
+      "__v": 0
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "640df512164441be6be0195c"
+  },
+  "title": "Part 2",
+  "image": "https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png",
+  "subtitle": "This is the subtitle",
+  "content": "We are mainly committed to the research of Biological Big Data and AI theory and methods, including bioinformatics, computational systems biology, network biology, dynamic data science methods, deep learning and applications, etc.",
+  "isShow": true,
+  "updated": {
+    "$date": "2023-03-12T15:51:46.966Z"
+  },
+  "__v": 0,
+  "papers": [
+    {
+      "_id": {
+        "$oid": "640858a3836f1e00662dc4a4"
+      },
+      "doi": "10.1186/s12864-023-09135-5",
+      "year": 2023,
+      "date": "2023.03.07",
+      "journal": "BMC genomics, 24(1), 47. https://doi.org/10.1186/s12864-023-09135-5",
+      "title": "TeCD: The eccDNA Collection Database for extrachromosomal circular DNA",
+      "authors": [
+        {
+          "name": "Jing Guo✝",
+          "link": "",
+          "_id": {
+            "$oid": "640858a3836f1e00662dc4a5"
+          }
+        },
+        {
+          "name": "Ze Zhang✝",
+          "link": "parallellight.com",
+          "_id": {
+            "$oid": "640858a3836f1e00662dc4a6"
+          }
+        },
+        {
+          "name": "Qingcui Li",
+          "link": "",
+          "_id": {
+            "$oid": "640858a3836f1e00662dc4a7"
+          }
+        },
+        {
+          "name": "Xiao Chang",
+          "link": "",
+          "_id": {
+            "$oid": "640858a3836f1e00662dc4a8"
+          }
+        },
+        {
+          "name": "Xiaoping Liu",
+          "link": "",
+          "_id": {
+            "$oid": "640858a3836f1e00662dc4a9"
+          }
+        }
+      ],
+      "links": {
+        "DOI: 10.1186/s12864-023-09135-5": "https://doi.org/10.1186/s12864-023-09135-5",
+        "PMID: 36707765": "https://pubmed.ncbi.nlm.nih.gov/36707765/",
+        "Google Scholar": "https://scholar.google.com/scholar?hl=zh-CN&as_sdt=0%2C5&q=TeCD%3A+The+eccDNA+Collection+Database+for+extrachromosomal+circular+DNA&btnG="
+      },
+      "abstract": "Background: Extrachromosomal circular DNA (eccDNA) is a kind of DNA that widely exists in eukaryotic cells. Studies in recent years have shown that eccDNA is often enriched during tumors and aging, and participates in the development of cell physiological activities in a special way, so people have paid more and more attention to the eccDNA, and it has also become a critical new topic in modern biological research. Description: We built a database to collect eccDNA, including animals, plants and fungi, and provide researchers with an eccDNA retrieval platform. The collected eccDNAs were processed in a uniform format and classified according to the species to which it belongs and the chromosome of the source. Each eccDNA record contained sequence length, start and end sites on the corresponding chromosome, order of the bases, genomic elements such as genes and transposons, and other information in the respective sequencing experiment. All the data were stored into the TeCD (The eccDNA Collection Database) and the BLAST (Basic Local Alignment Search Tool) sequence alignment function was also added into the database for analyzing the potential eccDNA sequences. Conclusion: We built TeCD, a platform for users to search and obtain eccDNA data, and analyzed the possible potential functions of eccDNA. These findings may provide a basis and direction for researchers to further explore the biological significance of eccDNA in the future.",
+      "keywords": [
+        "Circular DNA",
+        "Extrachromosomal DNA",
+        "eccDNA"
+      ],
+      "figure": "https://media.springernature.com/full/springer-static/image/art%3A10.1186%2Fs12864-023-09135-5/MediaObjects/12864_2023_9135_Fig1_HTML.png?as=webp",
+      "citation": "Guo, J., Zhang, Z., Li, Q., Chang, X., & Liu, X. (2023). TeCD: The eccDNA Collection Database for extrachromosomal circular DNA. BMC genomics, 24(1), 47. https://doi.org/10.1186/s12864-023-09135-5",
+      "archive": "Part 2",
+      "isShow": true,
+      "updated": {
+        "$date": "2023-03-08T09:42:59.890Z"
+      },
+      "__v": 0
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "640df512164441be6be0195d"
+  },
+  "title": "Part 3",
+  "image": "https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png",
+  "subtitle": "This is the subtitle",
+  "content": "We are mainly committed to the research of Biological Big Data and AI theory and methods, including bioinformatics, computational systems biology, network biology, dynamic data science methods, deep learning and applications, etc.",
+  "isShow": true,
+  "updated": {
+    "$date": "2023-03-12T15:51:46.966Z"
+  },
+  "__v": 0,
+  "papers": [
+    {
+      "_id": {
+        "$oid": "640858a3836f1e00662dc4aa"
+      },
+      "doi": "10.1186/s12864-023-09135-5",
+      "year": 2023,
+      "date": "2023.03.08",
+      "journal": "BMC genomics, 24(1), 47. https://doi.org/10.1186/s12864-023-09135-5",
+      "title": "TeCD: The eccDNA Collection Database for extrachromosomal circular DNA",
+      "authors": [
+        {
+          "name": "Jing Guo✝",
+          "link": "",
+          "_id": {
+            "$oid": "640858a3836f1e00662dc4ab"
+          }
+        },
+        {
+          "name": "Ze Zhang✝",
+          "link": "parallellight.com",
+          "_id": {
+            "$oid": "640858a3836f1e00662dc4ac"
+          }
+        },
+        {
+          "name": "Qingcui Li",
+          "link": "",
+          "_id": {
+            "$oid": "640858a3836f1e00662dc4ad"
+          }
+        },
+        {
+          "name": "Xiao Chang",
+          "link": "",
+          "_id": {
+            "$oid": "640858a3836f1e00662dc4ae"
+          }
+        },
+        {
+          "name": "Xiaoping Liu",
+          "link": "",
+          "_id": {
+            "$oid": "640858a3836f1e00662dc4af"
+          }
+        }
+      ],
+      "links": {
+        "DOI: 10.1186/s12864-023-09135-5": "https://doi.org/10.1186/s12864-023-09135-5",
+        "PMID: 36707765": "https://pubmed.ncbi.nlm.nih.gov/36707765/",
+        "Google Scholar": "https://scholar.google.com/scholar?hl=zh-CN&as_sdt=0%2C5&q=TeCD%3A+The+eccDNA+Collection+Database+for+extrachromosomal+circular+DNA&btnG="
+      },
+      "abstract": "Background: Extrachromosomal circular DNA (eccDNA) is a kind of DNA that widely exists in eukaryotic cells. Studies in recent years have shown that eccDNA is often enriched during tumors and aging, and participates in the development of cell physiological activities in a special way, so people have paid more and more attention to the eccDNA, and it has also become a critical new topic in modern biological research. Description: We built a database to collect eccDNA, including animals, plants and fungi, and provide researchers with an eccDNA retrieval platform. The collected eccDNAs were processed in a uniform format and classified according to the species to which it belongs and the chromosome of the source. Each eccDNA record contained sequence length, start and end sites on the corresponding chromosome, order of the bases, genomic elements such as genes and transposons, and other information in the respective sequencing experiment. All the data were stored into the TeCD (The eccDNA Collection Database) and the BLAST (Basic Local Alignment Search Tool) sequence alignment function was also added into the database for analyzing the potential eccDNA sequences. Conclusion: We built TeCD, a platform for users to search and obtain eccDNA data, and analyzed the possible potential functions of eccDNA. These findings may provide a basis and direction for researchers to further explore the biological significance of eccDNA in the future.",
+      "keywords": [
+        "Circular DNA",
+        "Extrachromosomal DNA",
+        "eccDNA"
+      ],
+      "figure": "",
+      "citation": "Guo, J., Zhang, Z., Li, Q., Chang, X., & Liu, X. (2023). TeCD: The eccDNA Collection Database for extrachromosomal circular DNA. BMC genomics, 24(1), 47. https://doi.org/10.1186/s12864-023-09135-5",
+      "archive": "Part 3",
+      "isShow": true,
+      "updated": {
+        "$date": "2023-03-08T09:42:59.891Z"
+      },
+      "__v": 0
+    }
+  ]
+}]
