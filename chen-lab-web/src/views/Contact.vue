@@ -26,8 +26,8 @@ onMounted(() => {
         <el-row>
           <el-col class="wrapper-sketch-text" :span="screenWidth > 1200 ? 14 : 24">
             <div class="wrapper-sketch-text-title">Contact</div>
-            <div class="wrapper-sketch-text-subtitle">You can contact us</div>
-            <h1 class="wrapper-sketch-text-content">coverage</h1>
+            <div class="wrapper-sketch-text-subtitle">Our Detail Information</div>
+            <h1 class="wrapper-sketch-text-content">Contact us at any time</h1>
           </el-col>
         </el-row>
       </el-col>
@@ -45,8 +45,7 @@ onMounted(() => {
           <el-col :span="screenWidth > 1200 ? 8 : 24">
             <h1>Contact us</h1>
             <p class="web-text">Professor: Xiaoping Liu</p>
-            <p class="web-text">Hangzhou Institute for Advanced Study (HIAS)</p>
-            <p class="web-text">University of Chinese Academy of Sciences (UCAS)</p>
+            <p class="web-text">Hangzhou Institute for Advanced Study (HIAS), University of Chinese Academy of Sciences (UCAS)</p>
             <p class="web-text">No.1 Xiangshan Branch, Hangzhou 310004, Zhejiang Province, China</p>
             <p class="web-text">TEL : +86-571-86080306</p>
             <p class="web-text">E-mail : xpliu@ucas.ac.cn</p>

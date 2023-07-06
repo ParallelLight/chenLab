@@ -16,6 +16,7 @@ const personsSchema = new mongoose.Schema({
     biography: String,
     hometown: String,
     fact: String,
+    timeline: String,
     isShow: Boolean,
     updated: { type: Date, default: Date.now }
 })

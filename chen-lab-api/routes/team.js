@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-// const Persons = require('../model/Persons');
+const Persons = require('../model/Persons');
 const Positions = require('../model/Positions');
 const Supports = require('../model/Supports');
 const { mongoose } = require('mongoose');
@@ -116,6 +116,7 @@ const { mongoose } = require('mongoose');
 //         biography: "Your biography Your biography Your biography Your biography Your biography Your biography Your biography Your biography Your biography",  // 个人简介
 //         hometown: "XXX, XXX, XXX",   // 家乡
 //         fact: "your fun fact your fun fact your fun fact your fun fact your fun fact your fun fact your fun fact your fun fact your fun fact ",    // Fun Fact
+//         timeline: "From 2019.09 to now", // 时间轴
 //         isShow: true
 //     },
 // ], function (err, res) {
@@ -217,7 +218,7 @@ const Teams = mongoose.model("Team", teamsSchema);
 
 /* GET Teams page. */
 router.get('/', async (req, res, next) => {
-    let teamsResults = await Teams.find().exec();
+    let teamsResults = await Teams.find({ isShow: true }).sort({ "p_id": 1 }).exec();
     let supportResults = await Supports.find({ isShow: true }).sort({ "u_id": -1 }).exec();
     var data = {
         code: 0,

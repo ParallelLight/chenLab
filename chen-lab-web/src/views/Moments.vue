@@ -78,8 +78,8 @@ onMounted(() => {
         <el-row>
           <el-col class="wrapper-sketch-text" :span="screenWidth > 1200 ? 14 : 24">
             <div class="wrapper-sketch-text-title">Moments</div>
-            <div class="wrapper-sketch-text-subtitle">The show of our work</div>
-            <h1 class="wrapper-sketch-text-content">Happy Moments</h1>
+            <div class="wrapper-sketch-text-subtitle">Highlight Moment of Lab</div>
+            <h1 class="wrapper-sketch-text-content">Browse laboratory happy moments</h1>
           </el-col>
         </el-row>
       </el-col>

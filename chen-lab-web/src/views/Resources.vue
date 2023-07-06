@@ -83,7 +83,7 @@ onMounted(() => {
           <el-col class="wrapper-sketch-text" :span="screenWidth > 1200 ? 14 : 24">
             <div class="wrapper-sketch-text-title">Resources</div>
             <div class="wrapper-sketch-text-subtitle">The resources of our work</div>
-            <h1 class="wrapper-sketch-text-content">There are some our resources</h1>
+            <h1 class="wrapper-sketch-text-content">Obtain codes, database tools, and resources</h1>
           </el-col>
         </el-row>
       </el-col>

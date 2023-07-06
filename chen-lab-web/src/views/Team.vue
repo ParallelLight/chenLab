@@ -3,6 +3,7 @@ import { ref, onMounted } from "vue";
 import { useDark } from "@vueuse/core"; // 引入暗黑模式
 import { Warning } from '@element-plus/icons-vue';
 import Axios from "axios";
+import familyImage from "./../assets/imgs/team/family.jpg";
 
 const fill = ref(true)
 const isDark = ref(useDark());
@@ -969,13 +970,19 @@ onMounted(() => {
             </el-col>
           </el-row>
           <!-- 左侧文本 -->
-          <span class="web-text">There is the composition of our group family and the family photo.
+          <span class="web-text">Our research group is a happy team. There is a composition of our group family and a
+            family photo. Our research Lab is a happy team where every member is valued for their unique contributions
+            and ideas. We believe that a positive and welcoming environment is essential for fostering creativity and
+            innovation, and as such, we work hard to ensure that everyone feels supported and encouraged. Whether we are
+            working on a challenging project or brainstorming new ideas, we always approach our work with enthusiasm and a
+            shared sense of purpose.
           </span>
         </el-col>
         <!-- 右侧图片 -->
         <el-col class="team-statistic-image" :span="screenWidth > 1200 ? 14 : 24" :offset="screenWidth > 1200 ? 2 : 24">
-          <el-image style="width: 100%; height: 360px;"
-            src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"></el-image>
+          <!-- <el-image style="width: 100%; height: 360px;"
+            src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"></el-image> -->
+          <el-image style="width: 100%;" :src="familyImage"></el-image>
         </el-col>
       </el-row>
     </el-col>
@@ -986,7 +993,7 @@ onMounted(() => {
     v-for="(identify, index) in team" :key="index">
     <el-col :span="2"></el-col>
     <el-col :span="20">
-      <h1>{{ identify.title }}</h1>
+      <h1 v-if="identify.isShow">{{ identify.title }}</h1>
       <el-row :gutter="70">
         <el-col class="team-people-person" :span="screenWidth > 1600 ? 8 : (screenWidth > 1080 ? 12 : 24)"
           v-for="(person, index) in identify.people" :key="index">
@@ -1002,7 +1009,7 @@ onMounted(() => {
               <!-- Hometown -->
               <p v-if="person.hometown">Hometown: {{ person.hometown }}</p>
               <!-- Fun Fact -->
-              <p>Fun Fact: {{ person.fact }}</p>
+              <p v-if="person.fact">Fun Fact: {{ person.fact }}</p>
             </div>
           </div>
           <div class="team-people-person-card">
@@ -1016,6 +1023,10 @@ onMounted(() => {
               <!-- Position -->
               <el-tag class="team-people-person-card-basic-position" size="large" effect="plain">{{ person.position
               }}</el-tag>
+            </div>
+            <!-- Timeline -->
+            <div v-if="person.timeline" class="team-people-person-card-timeline">
+              <span>{{ person.timeline }}</span>
             </div>
             <!-- Interests -->
             <div class="team-people-person-card-interests-wrapper">
@@ -1055,8 +1066,8 @@ onMounted(() => {
           </el-carousel>
         </el-col>
         <el-col :span="screenWidth > 1200 ? 8 : 24" :offset="screenWidth > 1200 ? 4 : 0">
-          <span class="web-text">There is the composition of our group family and the family photo.There is the
-            composition of our group family and the family photo.
+          <span class="web-text">Here are some friendly links and cooperation units, thank you for cooperation and
+            support.
           </span>
         </el-col>
       </el-row>
@@ -1111,7 +1122,7 @@ onMounted(() => {
   right: 0;
   padding: 40px;
   font-size: large;
-  text-align: justify;
+  /* text-align: justify; */
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   /* background: rgba(0, 0, 0, 0.6); */
@@ -1136,7 +1147,7 @@ onMounted(() => {
 }
 
 .team-people-person-card-basic-name {
-  font-size: 40px;
+  font-size: 32px;
   margin-right: 10px;
 }
 
@@ -1157,7 +1168,13 @@ onMounted(() => {
 .team-people-person-card-commerce {
   /* border: 1px solid green; */
   font-size: 18px;
-  margin: 0px 12px 0 0;
+  margin: 0 12px 0 0;
+}
+
+.team-people-person-card-timeline {
+  font-style: italic;
+  font-size: 18px;
+  margin: 12px 0 0 0;
 }
 
 .team-support {
@@ -1197,8 +1214,11 @@ onMounted(() => {
 
 /* 判断屏幕宽度小于640px后使用百分比 */
 @media screen and (max-width: 640px) {
-  .team-people-person-box-info {
-    font-size: medium;
+  .team-people-person-card-basic-name {
+    font-size: 24px;
   }
-}
-</style>
+
+  .team-people-person-box-info {
+    font-size: small;
+  }
+}</style>

@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-// const Interests = require('../model/Interests');
+const Interests = require('../model/Interests');
 const { mongoose } = require('mongoose');
 
 /* Interests 增加记录 */

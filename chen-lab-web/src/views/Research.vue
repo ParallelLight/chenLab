@@ -2,6 +2,7 @@
 import { ref, onMounted } from "vue";
 import { useDark } from "@vueuse/core"; // 引入暗黑模式
 import Axios from "axios";
+import bioImage from "./../assets/imgs/research/Bio.png";
 
 const isDark = ref(useDark());
 
@@ -103,18 +104,24 @@ onMounted(() => {
       <el-row>
         <!-- 左侧文本 -->
         <el-col :span="screenWidth > 1200 ? 10 : 24">
-          <span class="web-text">We are mainly committed to the research of Biological Big Data and AI
-            theory and methods, including bioinformatics, computational systems biology, network biology, dynamic data
-            science methods, deep learning and applications, etc.
-            We are mainly committed to the research of Biological Big Data and AI theory and methods, including
-            bioinformatics, computational systems biology, network biology, dynamic data science methods, deep learning
-            and applications, etc.
-          </span>
+          <p class="web-text">Systems biology is an academic field that seeks to integrate different levels of
+            information to understand how biological systems function. By studying the relationships and interactions
+            between various parts of a biological system (e.g., gene and protein networks involved in cell signaling,
+            metabolic pathways, organelles, cells, physiological systems, organisms etc.) it is hoped that eventually an
+            understandable model of the whole system can be developed.
+          </p>
+          <p class="web-text">Bioinformatics is a rapidly expanding field driven
+            by the increasing availability of
+            massive genomic data and the research perspectives of molecular biology and genetics. Also it is well known
+            that Bioinformatics is an integration of
+            mathematical, statistical and computer methods to analyze biological, biochemical and biophysical data. Our
+            research strives to explore the various aspects of bioinformatics, with tools of mathematics and computer
+            science.
+          </p>
         </el-col>
         <!-- 右侧图片 -->
         <el-col class="research-intro-image" :span="screenWidth > 1200 ? 12 : 24" :offset="screenWidth > 1200 ? 2 : 0">
-          <el-image
-            src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"></el-image>
+          <el-image :src="bioImage"></el-image>
         </el-col>
       </el-row>
     </el-col>
@@ -144,7 +151,7 @@ onMounted(() => {
     <el-row v-if="research.papers.length > 0" class="research-paper"
       :style="{ 'background-color': (!isDark ? '#f1f0ed' : '#131824') }">
       <el-col :span="2"></el-col>
-      <el-col :span="20">
+      <el-col :span="screenWidth > 1200 ? 15 : 20">
         <h2>Related Papers of {{ research.title }}</h2>
         <ol>
           <li class="web-text" v-for="(paper, index) in research.papers" :key="index">
@@ -179,13 +186,12 @@ onMounted(() => {
   /* border: 1px solid blue; */
 }
 
-.research-part-text {
-  /* border: 1px solid red; */
+/* .research-part-text {
   text-align: justify;
-}
+} */
 
 .research-paper {
-  text-align: justify;
+  /* text-align: justify; */
   padding: 40px 0 80px 0;
 }
 

@@ -3,7 +3,7 @@ import { ref } from "vue";
 import { useRoute } from 'vue-router'; // 引入路由
 import { useDark } from "@vueuse/core";  // 引入暗黑模式
 import { Sunny, Moon } from "@element-plus/icons-vue"
-import logoImage from "./../assets/logo.png";
+import logoImage from "./../assets/logo.svg";
 
 const route = useRoute();
 // const handleSelect = (key: string, keyPath: string[]) => {
