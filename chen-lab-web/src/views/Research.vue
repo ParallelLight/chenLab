@@ -20,12 +20,13 @@ Axios.get('/api/research')
 
 
 const screenWidth = ref();
-onMounted(() => {
+screenWidth.value = document.body.clientWidth;
+window.onresize = () => {
   screenWidth.value = document.body.clientWidth;
-  window.onresize = () => {
-    screenWidth.value = document.body.clientWidth;
-  }
-})
+}
+// onMounted(() => {
+
+// })
 // const researches = [
 //   {
 //     title: "Part 1",
@@ -136,7 +137,7 @@ onMounted(() => {
         <h1>{{ research.title }}</h1>
         <el-row>
           <el-col :span="screenWidth > 1200 ? 10 : 24">
-            <el-image style="width: 60%;" fit="fill" :src="research.image" :zoom-rate="1.2"
+            <el-image style="width: 100%;" fit="fill" :src="research.image" :zoom-rate="1.2"
               :preview-src-list="[research.image]" :initial-index="4" hide-on-click-modal="true"></el-image>
           </el-col>
           <el-col :span="screenWidth > 1200 ? 10 : 24" :offset="screenWidth > 1200 ? 4 : 0" class="research-part-text">

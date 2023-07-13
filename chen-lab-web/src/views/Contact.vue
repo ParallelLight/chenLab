@@ -8,12 +8,13 @@ const contact = reactive({
 })
 
 const screenWidth = ref();
-onMounted(() => {
+screenWidth.value = document.body.clientWidth;
+window.onresize = () => {
   screenWidth.value = document.body.clientWidth;
-  window.onresize = () => {
-    screenWidth.value = document.body.clientWidth;
-  }
-})
+}
+// onMounted(() => {
+// })
+
 </script>
 
 <template>
@@ -45,15 +46,17 @@ onMounted(() => {
           <el-col :span="screenWidth > 1200 ? 8 : 24">
             <h1>Contact us</h1>
             <p class="web-text">Professor: Xiaoping Liu</p>
-            <p class="web-text">Hangzhou Institute for Advanced Study (HIAS), University of Chinese Academy of Sciences (UCAS)</p>
+            <p class="web-text">Hangzhou Institute for Advanced Study (HIAS), University of Chinese Academy of Sciences
+              (UCAS)</p>
             <p class="web-text">No.1 Xiangshan Branch, Hangzhou 310004, Zhejiang Province, China</p>
             <p class="web-text">TEL : +86-571-86080306</p>
             <p class="web-text">E-mail : xpliu@ucas.ac.cn</p>
           </el-col>
           <!-- 14→24，2→0 -->
           <el-col :span="screenWidth > 1200 ? 14 : 24" :offset="screenWidth > 1200 ? 2 : 0" v-if="contact.map">
-            <iframe :style="screenWidth > 1200 ? 'width: 100%; height: 100%;' : 'width: 100%; height: 400px; margin-top: 30px;'" :src="contact.map"
-              frameborder="0"></iframe>
+            <iframe
+              :style="screenWidth > 1200 ? 'width: 100%; height: 100%;' : 'width: 100%; height: 400px; margin-top: 30px;'"
+              :src="contact.map" frameborder="0"></iframe>
           </el-col>
         </el-row>
       </div>

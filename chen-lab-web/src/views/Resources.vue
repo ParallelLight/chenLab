@@ -18,12 +18,14 @@ Axios.get('/api/resources')
 
 
 const screenWidth = ref();
-onMounted(() => {
+screenWidth.value = document.body.clientWidth;
+window.onresize = () => {
   screenWidth.value = document.body.clientWidth;
-  window.onresize = () => {
-    screenWidth.value = document.body.clientWidth;
-  }
-})
+}
+
+// onMounted(() => {
+// })
+
 // const resources = [
 //   {
 //     title: "Database",

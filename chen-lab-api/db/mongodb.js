@@ -9,7 +9,7 @@ mongoose.set("strictQuery", true);
 // uri：mongodb://user:pass@localhost:port/database
 // mongodb+srv://madmin:<password>@clustername.mongodb.net/<dbname>?retryWrites=true&w=majority
 const uri = "mongodb://172.20.0.13:27017/ChenLabMongoDB?retryWrites=true&w=majority";
-// const uri = "mongodb://10.20.252.250:27017/ChenLabMongoDB?retryWrites=true&w=majority";
+// const uri = "mongodb://10.20.252.5:27017/ChenLabMongoDB?retryWrites=true&w=majority";
 
 
 // 连接 mongoDB 数据库

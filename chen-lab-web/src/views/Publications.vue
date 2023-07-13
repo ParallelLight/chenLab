@@ -30,12 +30,13 @@ function scrollToView(value: string): void {
 }
 
 const screenWidth = ref();
-onMounted(() => {
+screenWidth.value = document.body.clientWidth;
+window.onresize = () => {
   screenWidth.value = document.body.clientWidth;
-  window.onresize = () => {
-    screenWidth.value = document.body.clientWidth;
-  }
-})
+}
+// onMounted(() => {
+// })
+
 // const publications = [
 //   {
 //     year: "2023",

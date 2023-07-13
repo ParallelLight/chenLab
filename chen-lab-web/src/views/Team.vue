@@ -23,12 +23,13 @@ Axios.get('/api/team')
   })
 
 const screenWidth = ref();
-onMounted(() => {
+screenWidth.value = document.body.clientWidth;
+window.onresize = () => {
   screenWidth.value = document.body.clientWidth;
-  window.onresize = () => {
-    screenWidth.value = document.body.clientWidth;
-  }
-})
+}
+// onMounted(() => {
+// })
+
 // const statistics = [
 //   {
 //     title: "Professors",
@@ -982,7 +983,9 @@ onMounted(() => {
         <el-col class="team-statistic-image" :span="screenWidth > 1200 ? 14 : 24" :offset="screenWidth > 1200 ? 2 : 24">
           <!-- <el-image style="width: 100%; height: 360px;"
             src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"></el-image> -->
-          <el-image style="width: 100%;" :src="familyImage"></el-image>
+          <!-- <el-image style="width: 100%;" :src="familyImage"></el-image> -->
+          <el-image style="width: 100%;" fit="fill" :src="familyImage" :zoom-rate="1.2" :preview-src-list="[familyImage]"
+            :initial-index="4" hide-on-click-modal="true"></el-image>
         </el-col>
       </el-row>
     </el-col>
@@ -1088,10 +1091,9 @@ onMounted(() => {
 }
 
 .team-statistic-image {
-  box-shadow: var(--el-box-shadow);
-  /* display: flex; */
-  /* justify-content: right; */
-  /* align-items: center; */
+  display: flex;
+  justify-content: right;
+  align-items: center;
 }
 
 .team-people {
@@ -1208,6 +1210,9 @@ onMounted(() => {
 @media screen and (max-width: 1200px) {
   .team-statistic-image {
     margin: 30px 0 0 0;
+    display: flex;
+    justify-content: left;
+    align-items: center;
     /* border: 1px solid green; */
   }
 }
@@ -1221,4 +1226,5 @@ onMounted(() => {
   .team-people-person-box-info {
     font-size: small;
   }
-}</style>
+}
+</style>

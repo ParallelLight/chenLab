@@ -17,12 +17,13 @@ Axios.get('/api/moments')
   })
 
 const screenWidth = ref();
-onMounted(() => {
+screenWidth.value = document.body.clientWidth;
+window.onresize = () => {
   screenWidth.value = document.body.clientWidth;
-  window.onresize = () => {
-    screenWidth.value = document.body.clientWidth;
-  }
-})
+}
+// onMounted(() => {
+// })
+
 // const moments = [
 //   {
 //     date: "2018-04-15",

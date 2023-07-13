@@ -2,16 +2,17 @@
 import { ref, onMounted } from "vue";
 import { useDark } from "@vueuse/core"; // 引入暗黑模式
 const isDark = ref(useDark());
-const screenWidth = ref();
 
-onMounted(() => {
+const screenWidth = ref();
+screenWidth.value = document.body.clientWidth;
+// console.log("111111111", screenWidth);
+window.onresize = () => {
   screenWidth.value = document.body.clientWidth;
-  // console.log("111111111", screenWidth);
-  window.onresize = () => {
-    screenWidth.value = document.body.clientWidth;
-    // console.log("222222222", screenWidth);
-  }
-})
+  // console.log("222222222", screenWidth);
+}
+
+// onMounted(() => {
+// })
 
 </script>
 
