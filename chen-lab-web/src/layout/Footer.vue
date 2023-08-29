@@ -27,12 +27,12 @@ const isDark = ref(useDark());
         </div>
         <div class="footer-wrap-flex-grow"></div>
         <div class="footer-wrap-text">
-          <div>© 2023 Computational Biology Lab</div>
+          <div>© 2023 Computational Systems Biology Lab</div>
           <div>Powered by <a href="https://www.parallellight.com/" target="_blank" style="color: #409EFF;">Ze Zhang</a>,
             <a href="https://p.lvcs.top/" target="_blank" style="color: #409EFF;">Chengshang LYU</a>, <a
               href="https://zhangqib.github.io/about/" target="_blank" style="color: #409EFF;">Qibin Zhang</a>
           </div>
-          <div>@ CompBioL, <a href="http://hias.ucas.ac.cn/" target="_blank" style="color: #409EFF;">HIAS</a>, <a
+          <div>@ CSBL, <a href="http://hias.ucas.ac.cn/" target="_blank" style="color: #409EFF;">HIAS</a>, <a
               href="https://www.ucas.ac.cn/" target="_blank" style="color: #409EFF;">UCAS</a></div>
         </div>
       </el-menu>
@@ -52,12 +52,12 @@ const isDark = ref(useDark());
               src='//clustrmaps.com/map_v2.png?cl=ffffff&w=100&t=tt&d=tn5kfLlfmc04L5tfIH3RXxlb4N3Hd7hZmmq0gAAnMZs' /></a>
         </div>
         <div class="mobile-footer-wrap-text">
-          <div>© 2023 Computational Biology Lab</div>
+          <div>© 2023 Computational Systems Biology Lab</div>
           <div>Powered by <a href="https://www.parallellight.com/" target="_blank" style="color: #409EFF;">Ze Zhang</a>,
             <a href="https://p.lvcs.top/" target="_blank" style="color: #409EFF;">Chengshang LYU</a>, <a
               href="https://zhangqib.github.io/about/" target="_blank" style="color: #409EFF;">Qibin Zhang</a>
           </div>
-          <div>@ CompBioL, <a href="http://hias.ucas.ac.cn/" target="_blank" style="color: #409EFF;">HIAS</a>, <a
+          <div>@ CSBL, <a href="http://hias.ucas.ac.cn/" target="_blank" style="color: #409EFF;">HIAS</a>, <a
               href="https://www.ucas.ac.cn/" target="_blank" style="color: #409EFF;">UCAS</a></div>
         </div>
       </div>

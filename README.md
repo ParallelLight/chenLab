@@ -10,6 +10,8 @@
 - [ ] 后台 CMS 管理系统
 
 ## Logs
+- [x] 2023.08.29：增添News数据库并在首页展示
+- [x] 2023.08.28：网页更名为“Computational Systems Biology Lab”
 - [x] 2023.04.25：Docker 本地部署 MongoDB（当前使用 MongoDB Atlas）
 - [x] 2023.03.13：修复了一些 BUG，修正菜单导航栏宽度无法自适应
 - [x] 2023.03.12：实现 ChenLab 内网访问 Demo

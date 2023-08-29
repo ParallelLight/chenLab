@@ -3,6 +3,64 @@ var router = express.Router();
 const Papers = require('../model/Papers');
 const { mongoose } = require('mongoose');
 
+/* Papers 增加一条记录 */
+// Papers.insertMany([
+//     {
+//         doi: "-",
+//         year: 2023,
+//         date: "2023.09.04",
+//         journal: "PNAS",
+//         title: "Earthquake alerting based on spatial geodetic data by spatiotemporal information transformation learning",
+//         authors: [
+//             {
+//                 name: "Yuyan Tong",
+//                 link: "",
+//             },
+//             {
+//                 name: "Renhao Hong",
+//                 link: "",
+//             },
+//             {
+//                 name: "Ze Zhang",
+//                 link: "",
+//             },
+//             {
+//                 name: "Kazuyuki Aihara",
+//                 link: "",
+//             },
+//             {
+//                 name: "Pei Chen",
+//                 link: "",
+//             },
+//             {
+//                 name: "Rui Liu",
+//                 link: "",
+//             },
+//             {
+//                 name: "Luonan Chen",
+//                 link: "",
+//             },
+//         ],
+//         links: {
+//             "DOI: 10.1103/PhysRevE.102.032403": "https://doi.org/10.1103/PhysRevE.102.032403",
+//             "PMID: 33076020": "https://pubmed.ncbi.nlm.nih.gov/33076020/",
+//             "Google Scholar": "https://scholar.google.com/scholar?hl=zh-CN&as_sdt=0%2C5&q=Molecular+dynamics+study+of+ways+of+RNA+base-pair+formation&btnG="
+//         },
+//         abstract: "Alerting for imminent earthquakes is particularly challenging due to the high nonlinearity and nonstationarity of geodynamical phenomena. In this study, based on spatiotemporal information (STI) transformation for high-dimensional real-time data, we developed a new model-free framework, i.e., real-time spatiotemporal information transformation learning (RSIT), for extending the nonlinear and nonstationary time series. Specifically, by transforming high-dimensional information of the Global Navigation Satellite System (GNSS) into one-dimensional dynamics via the STI strategy, RSIT efficiently utilizes two criteria of the transformed one-dimensional dynamics, i.e., unpredictability and instability. Such two criteria contemporaneously signal a potential critical transition of the geodynamical system, thereby providing early-warning signals of possible upcoming earthquakes. RSIT explores both the spatial and temporal dynamics of real-world data on the basis of a solid theoretical background in nonlinear dynamics and delay-embedding theory. The effectiveness of RSIT was demonstrated on geodynamical data of recent earthquakes from a number of regions across at least four years and through further comparison with existing methods.",
+//         keywords: ["RNA structure", "Biological Physics"],
+//         figure: "https://journals.aps.org/pre/article/10.1103/PhysRevE.102.032403/figures/1/medium",
+//         citation: "Duan, Q., Tao, P., Wang, J., & Xiao, Y. (2020). Molecular dynamics study of ways of RNA base-pair formation. Physical review. E, 102(3-1), 032403. https://doi.org/10.1103/PhysRevE.102.032403",
+//         archive: "",
+//         isShow: false
+//     }
+// ], function (err, res) {
+//     if (err) {
+//         console.log(err);
+//     }
+//     console.log(res);
+//     console.log("Papers 增加一条记录");
+// });
+
 /* Papers 增加记录 */
 // Papers.insertMany([
 //     {
